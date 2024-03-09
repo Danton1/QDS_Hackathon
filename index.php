@@ -14,7 +14,14 @@
     <div class="wrap">
         <!-- Navbar -->
         <?php $title = 'Student Social Media'?>
-        <?php include("src/components/header.php") ?>
+        <?php 
+        include("src/components/header.php"); 
+        include("./include_db.php");
+        ?>
+
+
+
+
         
         <!-- Main -->
     
