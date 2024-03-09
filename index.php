@@ -16,15 +16,35 @@
         <?php $title = 'Student Social Media'?>
         <?php 
         include("src/components/header.php"); 
-        include("./include_db.php");
+        include("./include_db.php");  // Connects the the db
+        include("src/database/initalize.php");  // Initalizes the db
+
+        // Prints the table
+        $res = $db->query('SELECT * FROM posts');
+
+        // TODO: Made a table, going to need to fix front end to match figma
+        $count = 1;
+        while ($row = $res->fetchArray()) {
+        echo "<h1>Post $count</h1>\n";
+        echo "<table>\n";
+        echo "<tr><th>User</th>".
+                "<th>Title</th>".
+                "<th>Post</th>".
+                "<th>Likes</th>" .
+                "<th>Date</th></tr>\n";
+            echo "<tr>";
+            echo "<td>{$row['1']}</td>";  // UserID
+            echo "<td>{$row['2']}</td>";  // Title
+            echo "<td>{$row['3']}</td>";  // Post
+            echo "<td>{$row['4']}</td>";  // Likes
+            echo "<td>{$row['5']}</td>";  // Date
+            echo "</tr>\n";
+            echo "</table>\n";
+            $count++; 
+        };
+
         ?>
-
-
-
-
         
-        <!-- Main -->
-    
         <?php include("src/components/footer.php") ?>
     </div>
 
