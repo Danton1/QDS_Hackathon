@@ -13,18 +13,12 @@
 <body>
     <div class="wrap">
         <!-- Navbar -->
-        <header class="header">
-            <h3 class="page_title">Student Social Media</h3>
-            <i class="fa-solid fa-bars"></i>
-        </header>
+        <?php $title = 'Student Social Media'?>
+        <?php include("src/components/header.php") ?>
         
         <!-- Main -->
     
-        <footer class="footer">
-            <i class="fa-solid fa-arrows-rotate"></i>
-            <i class="fa-solid fa-circle-plus"></i>
-            <i class="fa-solid fa-circle-user"></i>
-        </footer>
+        <?php include("src/components/header.php") ?>
     </div>
 
     <script src="./src/js/app.js"></script>
