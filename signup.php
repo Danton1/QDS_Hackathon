@@ -14,11 +14,11 @@
     <div class="wrap">
         <!-- Navbar -->
         <?php $title = 'signup'?>
-        <?php include("src/components/header.php") ?>
+        <?php include("src/components/header.php"); ?>
         
         <!-- Main -->
     
-        <?php include("src/components/header.php") ?>
+        <?php include("src/components/header.php"); ?>
     </div>
 
     <script src="./src/js/app.js"></script>
