@@ -5,10 +5,10 @@ let navbar = document.querySelector('.header .navbar');
 function check() {
     // If the checkbox is checked, display the output text
     if (checkbox.checked == true){
-        console.log('checked');
+        // console.log('checked');
         navbar.classList.add('active');
     } else {
-        console.log('unchecked');
+        // console.log('unchecked');
         navbar.classList.remove('active');
     }
 }

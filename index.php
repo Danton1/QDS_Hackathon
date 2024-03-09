@@ -14,7 +14,7 @@
 
 <body>
 
-    <div class="wrap">
+    <!-- <div class="wrap"> -->
         
         <!-- Navbar -->
         <?php $title = 'Student Social Media' ?>
@@ -63,11 +63,11 @@
             };
             ?>
         </main>
-        </div>
+        <!-- </div> -->
         
         <?php include("src/components/footer.php"); ?>
     
-    </div>
+    <!-- </div> -->
 
     <script src="./src/js/app.js"></script>
 </body>
