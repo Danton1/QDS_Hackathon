@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="wrap">
+    <!-- <div class="wrap"> -->
         <!-- Navbar -->
         <?php $title = 'Login'?>
         <?php include("src/components/header.php"); ?>
@@ -34,7 +34,7 @@
 
         <?php include("src/components/footer.php"); ?>
         </footer>
-    </div>
+    <!-- </div> -->
     
 
     <script src="./src/js/app.js"></script>
