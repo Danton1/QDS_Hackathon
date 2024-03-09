@@ -28,17 +28,17 @@
             $stm->bindValue(':id', "$id", SQLITE3_TEXT);
             $res = $stm->execute();
 
-            // Displays 404 page if the post does not exist
             $row = $res->fetchArray(SQLITE3_NUM);
             if ($row === false) {   
-                header('Location: /../404.php');
+                header('Location: /../index.php');
                 exit;
             }
             $UserName = $row[1];
-            $title = $row[2];
-            $post = $row[3];
-            $likes = $row[4];
-            $date= $row[5];
+            $userid = $row[2];
+            $title = $row[3];
+            $post = $row[4];
+            $likes = $row[5];
+            $date= $row[6];
         } else {
             header('Location: /../index.php');
             exit;
@@ -48,7 +48,7 @@
         <table>
             <tr>
                 <td>Username:</td>
-                <td><?php echo $UserName ?></td>
+                <td><a href="/../profile.php?id=<?php echo $userid ?>"><?php echo $UserName ?></a></td>
             </tr>
             <tr>
                 <td>Title: </td>
@@ -68,6 +68,22 @@
             </tr>
         </table>
         <br />
+
+        <?php 
+        $res = $db->query("SELECT * FROM comments WHERE PostID = $id");
+        while ($row = $res->fetchArray()) {
+            echo "<table>\n";
+            echo "<tr><th>User</th>".
+                    "<th>comment</th></tr>\n";
+                echo "<tr>";
+                echo "<td>{$row['4']}</td>";  // Username
+                echo "<td>{$row['2']}</td>";  // Comment
+                echo "</tr>";
+                echo "</table>";    
+            };
+
+
+        ?>
 
         <?php include(__DIR__ . "/../src/components/footer.php"); ?>
     </div>
