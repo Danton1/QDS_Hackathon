@@ -15,10 +15,10 @@
     <div class="wrap">
         <!-- Navbar -->
         <?php 
-        $title = 'Login'
-        define('BYPASS_AUTH', true);
-        include("config_session.php");
-        include("src/components/header.php"); 
+            $title = 'Login';
+            define('BYPASS_AUTH', true);
+            include("config_session.php");
+            include("src/components/header.php"); 
         ?>
 
         <!-- <header class="header">
