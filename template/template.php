@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BCIT Student Social Media">
     <meta name="keywords" content="BCIT, Student, Social, Media">
-    <title>Signup | Student Social Media</title>
+    <title>Template</title>
 </head>
 <body>
     <div class="wrap">
         <!-- Navbar -->
-        <?php $title = 'signup'?>
+        <?php $title = 'Template'?>
         <?php include("src/components/header.php"); ?>
         
         <!-- Main -->

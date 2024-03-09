@@ -1,14 +1,15 @@
 <?php
     // Creates posts table if does not exist
-    $SQL_create_table = "CREATE TABLE IF NOT EXISTS posts (
+    $SQL_create_post_table = "CREATE TABLE IF NOT EXISTS posts (
         ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         UserName VARCHAR(100),
+        UserID INTEGER,
         title VARCHAR(100),
         post VARCHAR(350),
         likes INTEGER,
         date DATE
     );";        
-    $db->exec($SQL_create_table);
+    $db->exec($SQL_create_post_table);
 
     // Inject sample posts if there are no entries in posts table
     $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM posts');
@@ -17,17 +18,42 @@
     $count = $row['cnt'];
 
     if ($count == 0) {
-        $SQL_insert_data = "INSERT INTO posts (UserName, title, likes, date, post) VALUES
-        ('Kim', 'SQL Injection', 5, '2024-01-01',
+        $SQL_insert_post_data = "INSERT INTO posts (UserName, UserID, title, likes, date, post) VALUES
+        ('Kim', 1, 'SQL Injection', 5, '2024-01-01',
         'I am having a little trouble understanding'),
-        ('Carl', 'Study Tips', 2, '2024-01-01', 
+        ('Carl', 2, 'Study Tips', 2, '2024-01-01', 
         'Hello, I just finished my midterms and I performed worse than I wanted to. Any tips on imporving study habits'),
-        ('Rick', 'Java Syntax', 12, '2024-02-23',
+        ('Rick', 3, 'Java Syntax', 12, '2024-02-23',
         'I just dont understand syntax of Java. Can someone help me'),
-        ('Paul', 'Divide and Conquer Algorithms', 7, date('now'),
+        ('Paul', 4, 'Divide and Conquer Algorithms', 7, date('now'),
         'What are some divide and conquer algorithms')";
 
-        $db->exec($SQL_insert_data);
+        $db->exec($SQL_insert_post_data);
+    }
+
+    // Creates user table if does not exist
+    $SQL_create_user_table = "CREATE TABLE IF NOT EXISTS users (
+        ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        Name VARCHAR(100),
+        ProgramName VARCHAR(100),
+        Term VARCHAR(20)
+    );";        
+    $db->exec($SQL_create_user_table);
+
+    // Inject sample users if there are no entries in users table
+    $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM users');
+    $res = $stmt->execute();
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+    $count = $row['cnt'];
+
+    if ($count == 0) {
+        $SQL_insert_user_data = "INSERT INTO users (Name, ProgramName, Term) VALUES
+        ('Kim', 'Computer Systems Technology', 1),
+        ('Carl', 'Business Information Technology Management', 2),
+        ('Rick', 'Computer Systems Technology', 2),
+        ('Paul', 'Computer Systems Technology', 3)";
+
+        $db->exec($SQL_insert_user_data);
     }
     
 ?>
