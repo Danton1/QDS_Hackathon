@@ -18,7 +18,7 @@
         
         <!-- Main -->
     
-        <?php include("src/components/header.php") ?>
+        <?php include("src/components/footer.php") ?>
     </div>
 
     <script src="./src/js/app.js"></script>
