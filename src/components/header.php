@@ -18,9 +18,9 @@ $user_location = '/profile.php';
   </div>
   <nav class="navbar">
       <a href="./index.php#home" class="mobile-only"><i class="fa-solid fa-house-chimney"></i> Home</a>
-      <a href="./authsignup.html"><i class="fa-solid fa-list"></i> My Posts</a>
-      <a href="./passwordchecker.html"><i class="fa-solid fa-spell-check"></i> Posts</a>
-      <a href="./authlogin.html"><i class="fa-solid fa-user-plus"></i> Login</a>
+      <a href="./#"><i class="fa-solid fa-list"></i> My Posts</a>
+      <a href="./#"><i class="fa-solid fa-spell-check"></i> Posts</a>
+      <a href="./login.php"><i class="fa-solid fa-user-plus"></i> Login</a>
   </nav>
 </header>
 <!-- End of HTML snippet that is inserted when the navbarplaceholder is called upon -->

@@ -57,14 +57,14 @@
         echo "<main class='container'>\n";
         while ($row = $res->fetchArray()) {
         echo "<div class='post'>\n";
-        echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['2']}</h1>\n"; // Title
-        echo "<p>{$row['3']}</p>";  // Post
+        echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
+        echo "<p>{$row['4']}</p>";  // Post
         echo "<a href='/posts/display_post.php?id={$row['0']}'>...Read More</a>";
         echo "<div class='stats'>\n";
         echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
-        echo "<div><i class='fa-regular fa-clock'></i>{$row['5']}</div>\n";  // Date
-        echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['4']}</div>\n";  // Likes
-        echo "<div><i class='fa-regular fa-comment'></i>{$row['4']}</div>\n";  // Likes
+        echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
+        echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
+        echo "<div><i class='fa-regular fa-comment'></i>{$row['5']}</div>\n";  // Likes
         echo "</div>\n";
 
 
