@@ -34,10 +34,10 @@
                 "<th>Date</th></tr>\n";
             echo "<tr>";
             echo "<td>{$row['1']}</td>";  // UserID
-            echo "<td>{$row['2']}</td>";  // Title
-            echo "<td>{$row['3']}</td>";  // Post
-            echo "<td>{$row['4']}</td>";  // Likes
-            echo "<td>{$row['5']}</td>";  // Date
+            echo "<td>{$row['3']}</td>";  // Title
+            echo "<td>{$row['4']}</td>";  // Post
+            echo "<td>{$row['5']}</td>";  // Likes
+            echo "<td>{$row['6']}</td>";  // Date
             echo "</tr>";
             echo "</table>";
 

@@ -33,10 +33,9 @@ CREATE TABLE IF NOT EXISTS programs (
 CREATE TABLE IF NOT EXISTS comments (
     ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     postID INTEGER,
-    comment VARCHAR(100),
-    rating 
-    Name VARCHAR(100),
-    Program INTEGER // ProgramID from programs
+    comment VARCHAR(100), 
+    commenterID INTEGER,
+    Name VARCHAR(100)
 )
 
 

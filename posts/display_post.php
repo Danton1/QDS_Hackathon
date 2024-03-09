@@ -69,6 +69,22 @@
         </table>
         <br />
 
+        <?php 
+        $res = $db->query("SELECT * FROM comments WHERE PostID = $id");
+        while ($row = $res->fetchArray()) {
+            echo "<table>\n";
+            echo "<tr><th>User</th>".
+                    "<th>comment</th></tr>\n";
+                echo "<tr>";
+                echo "<td>{$row['4']}</td>";  // Username
+                echo "<td>{$row['2']}</td>";  // Comment
+                echo "</tr>";
+                echo "</table>";    
+            };
+
+
+        ?>
+
         <?php include(__DIR__ . "/../src/components/footer.php"); ?>
     </div>
 

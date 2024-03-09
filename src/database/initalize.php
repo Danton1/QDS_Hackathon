@@ -55,5 +55,30 @@
 
         $db->exec($SQL_insert_user_data);
     }
+
+    // Creates comments table if does not exist
+    $SQL_create_comments_table = "CREATE TABLE IF NOT EXISTS comments (
+        ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        postID INTEGER,
+        comment VARCHAR(100),
+        commenterID INTEGER,
+        commenterName VARCHAR(20)
+    );";        
+    $db->exec($SQL_create_comments_table);
     
+    // Inject sample comments if there are no entries in comments table
+    $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM comments');
+    $res = $stmt->execute();
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+    $count = $row['cnt'];
+
+    if ($count == 0) {
+        $SQL_insert_comments_data = "INSERT INTO comments (postID, comment, commenterID, commenterName) VALUES
+        (2, 'pomodoro has really helped me', 3, 'Rick'),
+        (4, 'Merge sort is a popular sorting divide and conquer algo', 1, 'Kim')";
+
+        $db->exec($SQL_insert_comments_data);
+    }
+
+
 ?>
