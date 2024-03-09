@@ -14,19 +14,21 @@
 
 <body>
     <!-- <div class="wrap"> -->
-  
-</div>
-        <!-- Navbar -->
-        <?php $title = 'Student Social Media' ?>
-        <?php
-        include("src/components/header.php");
-        include("./include_db.php");  // Connects the the db
-        include("src/database/initalize.php");  // Initalizes the db
 
-        // session user id
-        // $id = $_SESSION['id'];
-        ?>
+    </div>
+    <!-- Navbar -->
+    <?php $title = 'Student Social Media' ?>
+    <?php
+    include("src/components/header.php");
+    include("./include_db.php");  // Connects the the db
+    include("src/database/initalize.php");  // Initalizes the db
 
+    // session user id
+    // $id = $_SESSION['id'];
+    ?>
+
+    <!-- main -->
+    <main class='container'>
         <form action="posts/create_post.php" method="post">
             <div>
                 <label for="title">Title: </label>
@@ -54,28 +56,33 @@
 
         // TODO: Made a table, going to need to fix front end to match figma
         $count = 1;
-        echo "<main class='container'>\n";
         while ($row = $res->fetchArray()) {
-        echo "<div class='post'>\n";
-        echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
-        echo "<p>{$row['4']}</p>";  // Post
-        echo "<a href='/posts/display_post.php?id={$row['0']}'>...Read More</a>";
-        echo "<div class='stats'>\n";
-        echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
-        echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
-        echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
-        echo "<div><i class='fa-regular fa-comment'></i>{$row['5']}</div>\n";  // Likes
-        echo "</div>\n";
+
+            // Getting the number of comments
+            $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM comments WHERE postID = :id');
+            $stmt->bindValue(':id', $row['0'], SQLITE3_INTEGER);
+            $res2 = $stmt->execute();
+            $row2 = $res2->fetchArray(SQLITE3_ASSOC);
+            $comments = $row2['cnt'];
 
 
+            echo "<div class='post'>\n";
+            echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
+            echo "<p>{$row['4']}</p>";  // Post
+            echo "<a href='/posts/display_post.php?id={$row['0']}'>...Read More</a>";
+            echo "<div class='stats'>\n";
+            echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
+            echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
+            echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
+            echo "<div><i class='fa-regular fa-comment'></i>{$comments}</div>\n";  // comments
+            echo "</div>\n";
 
-            $count++; 
+            $count++;
             echo "</div>\n";
         };
-        echo "</main>\n";
         ?>
-
-        <?php include("src/components/footer.php"); ?>
+    </main>
+    <?php include("src/components/footer.php"); ?>
     <!-- </div> -->
 
     <script src="./src/js/app.js"></script>
