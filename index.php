@@ -29,28 +29,10 @@
 
     <!-- main -->
     <main class='container'>
-        <form action="posts/create_post.php" method="post">
-            <div>
-                <label for="title">Title: </label>
-                <input for="title" name="title" id="title" />
-            </div>
-
-            <div>
-                <label for="post">Post: </label>
-                <input for="post" name="post" id="post" />
-            </div>
-
-            <!-- When session is implemented use this, otherwise test user Kim, ID = 1 -->
-            <!-- <input type="hidden" name="id" value="<?php //echo $id; 
-                                                        ?>"> -->
-            <input type="hidden" name="id" value=1>
-
-            <div>
-                <input type="submit" value="create" name="create" />
-            </div>
-        </form>
-
         <?php
+        include("posts/create_post_form.php");
+        include("posts/filter_post_search.php");
+
         // Prints the table
         $res = $db->query('SELECT * FROM posts');
         $count = 1;
