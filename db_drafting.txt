@@ -1,0 +1,57 @@
+This File is used for drafting the database structure:
+
+CREATE TABLE IF NOT EXISTS users (
+    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    Name VARCHAR(100),
+    Term VARCHAR(20),
+    Program INTEGER // ProgramID from programs
+)
+
+CREATE TABLE IF NOT EXISTS posts (
+    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER,
+    title VARCHAR(100),
+    post VARCHAR(350),
+    likes INTEGER,
+    date DATE
+)
+
+CREATE TABLE IF NOT EXISTS courses (
+    CourseID VARCHAR(50),
+    ProgramName VARCHAR(100),
+    Term INTEGER,
+    CourseName VARCHAR(100)
+)
+
+CREATE TABLE IF NOT EXISTS programs (
+    ProgramID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    ProgramName VARCHAR(100)
+    
+)
+
+
+CREATE TABLE IF NOT EXISTS comments (
+    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    postID INTEGER,
+    comment VARCHAR(100),
+    rating 
+    Name VARCHAR(100),
+    Program INTEGER // ProgramID from programs
+)
+
+
+INSERT INTO posts (UserID, title, post, likes, date) 
+ VALUES 
+ ('1', 'test', 'hello, i need help', '0');
+
+INSERT INTO programs (ProgramName) 
+ VALUES 
+ ('Business Information Technology Management'),
+ ('Computer Systems Technology')
+
+ 
+INSERT INTO courses (CourseID, ProgramName, CourseName) 
+ VALUES 
+ ('BSYS3000', 'Business Information Technology Management', 'Cloud Business Development 1'),
+ ('BSYS3105', 'Business Information Technology Management', 'Information Technology 1'),
+ ('COMP3522', 'Computer System Technology', 'Object Orientated Programming 2'),

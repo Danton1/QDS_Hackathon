@@ -13,10 +13,8 @@
 <body>
     <div class="wrap">
         <!-- Navbar -->
-        <header class="header">
-            <h3 class="page_title">Signup</h3>
-            <i class="fa-solid fa-bars"></i>
-        </header>
+        <?php $title = 'signup'?>
+        <?php include("src/components/header.php") ?>
         
         <!-- Main -->
     

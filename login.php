@@ -14,10 +14,8 @@
 
     <div class="wrap">
         <!-- Navbar -->
-        <header class="header">
-            <h3 class="page_title">Login</h3>
-            <i class="fa-solid fa-bars"></i>
-        </header>
+        <?php $title = "Login"?>
+        <?php include("src/components/header.php") ?>
         
         <!-- Main -->
         <div class="main_wrap">
@@ -34,11 +32,7 @@
             </div>
         </div>
     
-        <footer class="footer">
-            <i class="fa-solid fa-arrows-rotate"></i>
-            <i class="fa-solid fa-circle-plus"></i>
-            <i class="fa-solid fa-circle-user"></i>
-        </footer>
+        <?php include("src/components/footer.php") ?>
     </div>
 
     <script src="./src/js/app.js"></script>
