@@ -12,9 +12,15 @@
 </head>
 <body>
     <div class="wrap">
+
         <!-- Navbar -->
         <?php $title = "Home"?>
-        <?php include("src/components/header.php") ?>
+        
+        <!-- <?php include("src/components/header.php") ?> -->
+        <header class="header">
+            <h3 class="page_title">General</h3>
+            <i class="fa-solid fa-bars"></i>
+        </header>
         
         <!-- Main -->
         <div class="main_wrap">
