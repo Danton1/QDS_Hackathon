@@ -6,8 +6,10 @@ $user_location = '/profile.php';
 
 <!-- HTML snippet that is inserted when the navbarplaceholder is called upon -->
 <!-- <header class="header">
-  <a href="./index.php" class="logo"><img src="./src/imgs/icon.png" class="logo-img"
-          alt=""><span>School</span>Board</a>
+  <a href="./index.php" class="logo">
+    <img src="./src/imgs/icon.png" class="logo-img" alt="">
+    <span>School</span>Board
+  </a>
   <label class="hamburger">
     <input type="checkbox" id="menu-btn">
     <svg viewBox="0 0 32 32">
