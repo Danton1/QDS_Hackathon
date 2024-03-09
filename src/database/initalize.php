@@ -37,8 +37,11 @@
     $SQL_create_user_table = "CREATE TABLE IF NOT EXISTS users (
         ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         Name VARCHAR(100),
+        Email VARCHAR(100),
+        Password VARCHAR(100),
         ProgramName VARCHAR(100),
-        Term VARCHAR(20)
+        Term VARCHAR(20),
+        Foreign Key (ProgramName) References programs(ProgramName)
     );";        
     $db->exec($SQL_create_user_table);
 
@@ -49,12 +52,17 @@
     $count = $row['cnt'];
 
     if ($count == 0) {
-        $SQL_insert_user_data = "INSERT INTO users (Name, ProgramName, Term) VALUES
-        ('Kim', 'Computer Systems Technology', 1),
-        ('Carl', 'Business Information Technology Management', 2),
-        ('Rick', 'Computer Systems Technology', 2),
-        ('Paul', 'Computer Systems Technology', 3)";
-
+        $hashedPasswordKim = password_hash('Kim', PASSWORD_DEFAULT);
+        $hashedPasswordCarl = password_hash('Carl', PASSWORD_DEFAULT);
+        $hashedPasswordRick = password_hash('Rick', PASSWORD_DEFAULT);
+        $hashedPasswordPaul = password_hash('Paul', PASSWORD_DEFAULT);
+    
+        $SQL_insert_user_data = "INSERT INTO users (Name, Email, Password, ProgramName, Term) VALUES
+        ('Kim', 'Kim@gmail.com', '$hashedPasswordKim', 'Computer Systems Technology', 1),
+        ('Carl', 'Carl@gmail.com', '$hashedPasswordCarl', 'Business Information Technology Management', 2),
+        ('Rick', 'Rick@gmail.com', '$hashedPasswordRick', 'Computer Systems Technology', 2),
+        ('Paul', 'Paul@gmail.com', '$hashedPasswordPaul', 'Computer Systems Technology', 3)";
+    
         $db->exec($SQL_insert_user_data);
     }
 
@@ -82,5 +90,22 @@
         $db->exec($SQL_insert_comments_data);
     }
 
+    // Creates programs table if does not exist
+    $SQL_create_programs_Table = "CREATE TABLE IF NOT EXISTS programs (
+        ProgramID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        ProgramName VARCHAR(100),
+        NumTerms INTEGER
+    )";
+    $db->exec($SQL_create_programs_Table);
 
+    // Inject sample programs if there are no entries in programs table
+    $results = $db->query("SELECT COUNT(*) as count FROM programs");
+    $row = $results->fetchArray();
+    if ($row['count'] == 0) {
+        $db->exec("
+        INSERT INTO programs (ProgramName, NumTerms) VALUES 
+        ('Business Information Technology Management', 4),
+        ('Computer Systems Technology', 4)
+        ");
+    }
 ?>

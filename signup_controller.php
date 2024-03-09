@@ -2,7 +2,6 @@
 define('BYPASS_AUTH', true);
 require_once 'config_session.php';
 require_once 'include_db.php';
-require_once 'src/models/User.php';
 require_once 'utils.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
