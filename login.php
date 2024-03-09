@@ -14,8 +14,8 @@
 
     <div class="wrap">
         <!-- Navbar -->
-        <?php $title = "Login"?>
-        <?php include("src/components/header.php") ?>
+        <?php $title = 'Login'?>
+        <?php include("src/components/header.php"); ?>
         
         <!-- Main -->
         <div class="main_wrap">
@@ -31,9 +31,11 @@
                 <h3>Don't have an account?</h3>
             </div>
         </div>
-    
-        <?php include("src/components/footer.php") ?>
+
+        <?php include("src/components/footer.php"); ?>
+        </footer>
     </div>
+    
 
     <script src="./src/js/app.js"></script>
 </body>

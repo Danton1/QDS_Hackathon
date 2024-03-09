@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+*{ margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; transition: all 0.2s;}
 a { text-decoration: none; color: black;}
 ul { list-style: none; }
 img { width: 100%; height: 100%; object-fit: cover; }
