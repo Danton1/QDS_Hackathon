@@ -57,5 +57,26 @@
             }
             return false;
         }
+
+        public static function invalidCredentials($db, $email, $password) {
+            $stmt = $db->prepare('SELECT * FROM users WHERE Email = :email');
+            $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+            $result = $stmt->execute();
+            $user = $result->fetchArray();
+
+            if ($user && password_verify($password, $user['Password'])) {
+                return false;
+            }
+            return true;
+        }
+
+        public static function getUserId($db, $email) {
+            $stmt = $db->prepare('SELECT ID FROM users WHERE Email = :email');
+            $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+            $result = $stmt->execute();
+            $user = $result->fetchArray();
+
+            return $user['ID'];
+        }
     }
 ?>
