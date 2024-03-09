@@ -37,7 +37,7 @@
             $program = $row[2];
             $term = $row[3];
         } else {
-            header('Location: /../index.php');
+            header('Location: /../login.php');
             exit;
         }
         ?>
