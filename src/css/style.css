@@ -50,7 +50,7 @@ body {
 
 .hamburger svg {
   /* The size of the SVG defines the overall size */
-  height: 3em;
+  height: 5rem;
   /* Define the transition for transforming the SVG */
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -77,6 +77,10 @@ body {
 .hamburger input:checked+svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
+}
+
+footer{
+  display: none;
 }
 
 .header {
@@ -206,7 +210,8 @@ body {
 }
 
 main{
-  margin-top: 10rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 @media (max-width: 1300px) {
@@ -215,17 +220,7 @@ main{
   }
 }
 
-@media (max-width: 1057px) {
-  .header {
-    padding: 0 2rem;
-  }
-}
-
-@media (max-width: 796px) {
-  main {
-    margin-top: 8rem;
-  }
-
+@media (max-width: 1125px) {  
   .hamburger {
     display: inline-block;
   }
@@ -257,13 +252,11 @@ main{
     display: block; 
     font-size: 2rem;
   }
+}
 
-  .features .box-container {
-    gap: 2rem;
-  }
-
-  .credit {
-    margin-bottom: 7rem;
+@media (max-width: 796px) {
+  main {
+    margin-top: 8rem;
   }
 
   .fixed-bottom {
