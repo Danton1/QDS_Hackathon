@@ -8,11 +8,10 @@ function check() {
         console.log('checked');
         navbar.classList.add('active');
     } else {
-        console.log('unchecked');
         navbar.classList.remove('active');
     }
 }
-checkbox.addEventListener('click', check);
+check();
 window.onscroll = () =>{
     checkbox.checked = false;
     navbar.classList.remove('active');

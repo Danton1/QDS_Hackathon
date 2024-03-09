@@ -11,7 +11,9 @@
     <title>Student Social Media</title>
 </head>
 <body>
-    <div class="wrap">
+    <!-- <div class="wrap"> -->
+  
+</div>
         <!-- Navbar -->
         <?php $title = 'Student Social Media'?>
         <?php 
@@ -24,33 +26,29 @@
 
         // TODO: Made a table, going to need to fix front end to match figma
         $count = 1;
+        echo "<main class='container'>\n";
         while ($row = $res->fetchArray()) {
-        echo "<h1>Post $count</h1>\n";
-        echo "<table>\n";
-        echo "<tr><th>User</th>".
-                "<th>Title</th>".
-                "<th>Post</th>".
-                "<th>Likes</th>" .
-                "<th>Date</th></tr>\n";
-            echo "<tr>";
-            echo "<td>{$row['1']}</td>";  // UserID
-            echo "<td>{$row['2']}</td>";  // Title
-            echo "<td>{$row['3']}</td>";  // Post
-            echo "<td>{$row['4']}</td>";  // Likes
-            echo "<td>{$row['5']}</td>";  // Date
-            echo "</tr>\n";
-            echo "</table>\n";
+        echo "<div class='post'>\n";
+        echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['2']}</h1>\n"; // Title
+        echo "<p>{$row['3']}</p>";  // Post
+        echo "<a href='/posts/display_post.php?id={$row['0']}'>...Read More</a>";
+        echo "<div class='stats'>\n";
+        echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
+        echo "<div><i class='fa-regular fa-clock'></i>{$row['5']}</div>\n";  // Date
+        echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['4']}</div>\n";  // Likes
+        echo "<div><i class='fa-regular fa-comment'></i>{$row['4']}</div>\n";  // Likes
+        echo "</div>\n";
 
-            echo "<a href='/posts/display_post.php?id={$row['0']}'>View More</a>";
 
 
             $count++; 
+            echo "</div>\n";
         };
-
+        echo "</main>\n";
         ?>
         
         <?php include("src/components/footer.php"); ?>
-    </div>
+    <!-- </div> -->
 
     <script src="./src/js/app.js"></script>
 </body>
