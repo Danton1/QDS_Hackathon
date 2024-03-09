@@ -1,0 +1,107 @@
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.program_btn {
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #263479;
+    color: #eee;
+    border-radius: 30px;
+}
+
+.program_btn a {
+    color: #eee;
+}
+
+.program_btn i {
+    margin-left: 20px;
+}
+
+/* Post style starts here */
+.posts {
+    width: 100%;
+    height: calc(100% - 40px);
+    padding: 0 0 20px 0;
+    overflow-y: scroll;
+}
+
+/* Hiding scroll bar while making it still scrollable */
+.posts {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.posts::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.post {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+    min-height: 150px;
+    border-radius: 15px;
+    background-color: #eee;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+/* post header (user profile, name, date, etc) */
+.post_header {
+    width: 100%;
+    height: 70px;
+    padding: 0 20px 0 15px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.post_info {
+    width: calc(100% - 50px - 15px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_term {
+    font-size: 13px;
+}
+
+.post_date {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+/* post header style ends here */
+
+.post_desc {
+    width: 100%;
+    padding: 20px 20px 40px 20px;
+}
+
+.post_react {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.post_react i:nth-child(2) {
+    margin-left: 10px;
+}
+/* post style ends here */

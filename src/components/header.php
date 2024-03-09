@@ -6,8 +6,10 @@ $user_location = '/profile.php';
 
 <!-- HTML snippet that is inserted when the navbarplaceholder is called upon -->
 <header class="header">
-  <a href="./index.php" class="logo"><img src="./src/imgs/icon.png" class="logo-img"
-          alt=""><span>School</span>Board</a>
+  <a href="./index.php" class="logo">
+    <img src="./src/imgs/icon.png" class="logo-img" alt="">
+    <span>School</span>Board
+  </a>
   <label class="hamburger">
     <input type="checkbox" id="menu-btn">
     <svg viewBox="0 0 32 32">
@@ -15,12 +17,16 @@ $user_location = '/profile.php';
       <path class="line" d="M7 16 27 16"></path>
     </svg>
   </label>
-  </div>
   <nav class="navbar">
       <a href="./index.php#home" class="mobile-only"><i class="fa-solid fa-house-chimney"></i> Home</a>
-      <a href="./#"><i class="fa-solid fa-list"></i> My Posts</a>
-      <a href="./#"><i class="fa-solid fa-spell-check"></i> Posts</a>
+      <a href="#"><i class="fa-solid fa-list"></i> My Posts</a>
+      <a href="#"><i class="fa-solid fa-spell-check"></i> Posts</a>
       <a href="./login.php"><i class="fa-solid fa-user-plus"></i> Login</a>
   </nav>
 </header>
+
+<!-- <header class="header">
+    <h3 class="page_title">General</h3>
+    <i class="fa-solid fa-bars"></i>
+</header> -->
 <!-- End of HTML snippet that is inserted when the navbarplaceholder is called upon -->
