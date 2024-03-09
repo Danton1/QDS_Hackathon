@@ -7,7 +7,9 @@
         title VARCHAR(100),
         post VARCHAR(350),
         likes INTEGER,
-        date DATE
+        date DATE,
+        program VARCHAR(100),
+        course VARCHAR(100)
     );";        
     $db->exec($SQL_create_post_table);
 
@@ -18,14 +20,14 @@
     $count = $row['cnt'];
 
     if ($count == 0) {
-        $SQL_insert_post_data = "INSERT INTO posts (UserName, UserID, title, likes, date, post) VALUES
-        ('Kim', 1, 'SQL Injection', 5, '2024-01-01',
+        $SQL_insert_post_data = "INSERT INTO posts (UserName, UserID, title, likes, date, program, course, post) VALUES
+        ('Kim', 1, 'SQL Injection', 5, '2024-01-01', 'Computer Systems Techonology', 'COMP 2537',
         'I am having a little trouble understanding'),
-        ('Carl', 2, 'Study Tips', 2, '2024-01-01', 
+        ('Carl', 2, 'Study Tips', 2, '2024-01-01', 'Business Information Technology Management', 'General',
         'Hello, I just finished my midterms and I performed worse than I wanted to. Any tips on imporving study habits'),
-        ('Rick', 3, 'Java Syntax', 12, '2024-02-23',
+        ('Rick', 3, 'Java Syntax', 12, '2024-02-23', 'Computer Systems Techonology', 'COMP 2522',
         'I just dont understand syntax of Java. Can someone help me'),
-        ('Paul', 4, 'Divide and Conquer Algorithms', 7, date('now'),
+        ('Paul', 4, 'Divide and Conquer Algorithms', 7, date('now'), 'Computer Systems Techonology', 'COMP 3760',
         'What are some divide and conquer algorithms')";
 
         $db->exec($SQL_insert_post_data);

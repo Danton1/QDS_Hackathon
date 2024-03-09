@@ -53,8 +53,6 @@
         <?php
         // Prints the table
         $res = $db->query('SELECT * FROM posts');
-
-        // TODO: Made a table, going to need to fix front end to match figma
         $count = 1;
         while ($row = $res->fetchArray()) {
 
@@ -68,6 +66,7 @@
 
             echo "<div class='post'>\n";
             echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
+            echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
             echo "<p>{$row['4']}</p>";  // Post
             echo "<a href='/posts/display_post.php?id={$row['0']}'>...Read More</a>";
             echo "<div class='stats'>\n";
