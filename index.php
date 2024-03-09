@@ -40,12 +40,16 @@
             echo "<td>{$row['5']}</td>";  // Date
             echo "</tr>\n";
             echo "</table>\n";
+
+            echo "<a href='/posts/display_post.php?id={$row['0']}'>View More</a>";
+
+
             $count++; 
         };
 
         ?>
         
-        <?php include("src/components/footer.php") ?>
+        <?php include("src/components/footer.php"); ?>
     </div>
 
     <script src="./src/js/app.js"></script>

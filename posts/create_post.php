@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BCIT Student Social Media">
     <meta name="keywords" content="BCIT, Student, Social, Media">
-    <title>Student Social Media</title>
+    <title>Creating Post</title>
 </head>
 <body>
     <div class="wrap">
         <!-- Navbar -->
-        <?php $title = 'Create Post'?>
-        <?php include(__DIR__ . "/../src/components/header.php") ?>
+        <?php $title = 'Create Post';?>
+        <?php include(__DIR__ . "/../src/components/header.php"); ?>
 
         
         <!-- Main -->
-        <?php include(__DIR__ . "/../src/components/footer.php") ?>
+        <?php include(__DIR__ . "/../src/components/footer.php"); ?>
     </div>
 
     <script src="../src/js/app.js"></script>
