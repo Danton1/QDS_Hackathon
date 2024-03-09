@@ -38,8 +38,8 @@
             echo "<td>{$row['3']}</td>";  // Post
             echo "<td>{$row['4']}</td>";  // Likes
             echo "<td>{$row['5']}</td>";  // Date
-            echo "</tr>\n";
-            echo "</table>\n";
+            echo "</tr>";
+            echo "</table>";
 
             echo "<a href='/posts/display_post.php?id={$row['0']}'>View More</a>";
 

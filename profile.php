@@ -42,6 +42,7 @@
         }
         ?>
 
+        <!-- Displays user information -->
         <table>
             <tr>
                 <td>Username:</td>
@@ -56,6 +57,30 @@
                 <td><?php echo $term ?></td>
             </tr>
         </table>
+
+        <!-- Displays user posts -->
+        <?php 
+        $res = $db->query("SELECT * FROM posts WHERE UserID = $userid");
+
+        $count = 1;
+        while ($row = $res->fetchArray()) {
+            echo "<h1>Post $count</h1>\n";
+            echo "<table>\n";
+            echo "<tr><th>Title</th>".
+                    "<th>Post</th>".
+                    "<th>Date</th></tr>\n";
+                echo "<tr>";
+                echo "<td><a href='/posts/display_post.php?id={$row['0']}'>{$row['3']}</a></td>";  // Title
+                echo "<td>{$row['4']}</td>";  // Post
+                echo "<td>{$row['6']}</td>";  // Date
+                echo "</tr>";
+                echo "</table>";    
+    
+                $count++; 
+            };
+
+
+        ?>
 
 
 
