@@ -57,6 +57,7 @@ select {
 	background-color: #3596f1;
 	margin-bottom: 10px;
 	cursor: pointer;
+	font-size: 17px;
 }
 
 .signup_wrap a {

@@ -7,8 +7,8 @@ $user_location = '/profile.php';
 ?>
  <!-- HTML snippet that is inserted when the navbarplaceholder is called upon -->
 <header class="header">
-  <a href="./index.php" class="logo">
-    <img src="./src/imgs/icon.png" class="logo-img" alt="">
+  <a href="/index.php" class="logo">
+    <img src="/src/imgs/icon.png" class="logo-img" alt="">
     <span>School</span>Board
   </a>
   <label class="hamburger">
@@ -19,7 +19,7 @@ $user_location = '/profile.php';
     </svg>
   </label>
   <nav class="navbar">
-      <a href="./login.php"><i class="fa-solid fa-user-plus"></i> Login</a>
+      <a href="s/login.php"><i class="fa-solid fa-user-plus"></i> Login</a>
   </nav>
 </header>
 <!-- End of HTML snippet that is inserted when the navbarplaceholder is called upon -->  
