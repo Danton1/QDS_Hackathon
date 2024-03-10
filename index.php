@@ -92,10 +92,9 @@
                 echo "<div class='stats'>\n";
                 echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
 
-                echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
-                    ."<i class='fa-regular fa-thumbs-up'></i>"
-                    ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
-                    ."</button>\n";  // Likes button with count
+                echo "<div><button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
+                    ."<i class='fa-regular fa-thumbs-up'></i>{$row['5']}\n"
+                    ."</button></div>\n";  // Likes button with count
 
                 echo "<div><i class='fa-regular fa-comment'></i>{$comments}</div>\n";  // comments
                 echo "</div>\n";

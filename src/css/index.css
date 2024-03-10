@@ -47,8 +47,9 @@
 }
 
 .stats {
-	position: relative;
+	/* position: relative; */
 	width: 100%;
+  padding-bottom: 0.5rem;
 	color: #70757b;
 	font-size: 1rem;
 	display: flex;
@@ -57,9 +58,16 @@
 	margin-top: 1.5rem;
 }
 
+.like-btn {
+  color: #70757b;
+	font-size: 1rem;
+}
+
 .stats i {
+  padding: 0 0.15rem;
 	font-size: 1.5rem;
 	margin-right: 0.5rem;
+  animation-duration: 0;
 	color: #3595f1;
 }
 
@@ -68,16 +76,53 @@
 	color: rgb(112, 117, 123);
 }
 
+.stats div>button {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.stats div>a {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.fa-thumbs-up:hover {
+  animation-duration: 0;
+  padding: 0rem;
+}
+
 .fa-thumbs-up:hover {
 	color: #3595f1;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	font-weight: bold;
 }
 
 .fa-comment:hover {
+  animation-duration: 0;
+  padding: 0rem;
+}
+
+.fa-comment:hover {
 	color: #3595f1;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	font-weight: bold;
+}
+
+.fa-trash-can:hover {
+  animation-duration: 0;
+  padding: 0rem;
+}
+
+.fa-trash-can:hover {
+	color: #3595f1;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+.fa-clock {
+  cursor: unset;
 }
 
 .stats div {
