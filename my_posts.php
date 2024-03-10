@@ -41,7 +41,6 @@
                         echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
                         echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
                         echo "<div><a href='posts/delete_post.php?id={$row['0']}'><i class='fa-regular fa-trash-can'></i>Delete</a></div>\n";  // Delete
-                        echo "<div><i class='fa-regular fa-pen-to-square'></i>Edit</div>\n";  // Edit
                     echo "</div>\n";
                 echo "</div>\n";
             };

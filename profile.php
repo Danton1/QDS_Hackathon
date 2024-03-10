@@ -77,9 +77,6 @@
                             <p>Term <?php echo $term; ?></p>
                         </div>
                     </div>
-                    <div class="edit_btn">
-                        <i class="fa-solid fa-pencil"></i> Edit
-                    </div>
                 </div>
                 <ul class="profile_options">
                     <li class="mypost">
