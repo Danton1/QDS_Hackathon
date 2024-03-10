@@ -19,10 +19,10 @@
         <!-- Navbar -->
         <?php $title = 'Student Social Media' ?>
         <?php
-        include("src/components/header.php");
+        include("config_session.php");
         include("./include_db.php");  // Connects the the db
         include("src/database/initalize.php");  // Initalizes the db
-        include("config_session.php");
+        include("src/components/header.php");
         ?>
 
     <!-- main -->
@@ -32,17 +32,6 @@
         include("posts/create_post_form.php");
         echo "</div>\n";
         include("posts/filter_post_search.php");
-
-        ?>
-        <input type="button" value="Logout" name="logout" onclick="window.location.href = 'logout.php'"/>
-        <?php
-        if (isset($_SESSION["id"])) {
-            $id_testing = $_SESSION["id"];
-            echo $id_testing;
-        } else {
-            echo "No session";
-        }
-
 
 
         // Prints the table
