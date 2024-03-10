@@ -19,7 +19,7 @@ $user_location = '/profile.php';
     </label>
     <nav class="navbar">
         <a href="/index.php#home" class="mobile-only"><i class="fa-solid fa-house-chimney"></i> Home</a>
-        <a href="#"><i class="fa-solid fa-list"></i> My Posts</a>
+        <a href="../../my_posts.php"><i class="fa-solid fa-list"></i> My Posts</a>
         <a href="#"><i class="fa-solid fa-spell-check"></i> Posts</a>
         <a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     </nav>
