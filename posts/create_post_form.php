@@ -10,7 +10,7 @@ $program = $row['ProgramName'];
 ?>
 
 
-<h1><i class='fa-solid fa-chevron-right'></i>Create a Post</h1>
+<h1></i>Create a Post</h1>
 <form action="/posts/create_post.php" method="post">
     <div>
         <label for="title">Title: </label>
