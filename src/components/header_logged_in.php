@@ -21,6 +21,6 @@ $user_location = '/profile.php';
         <a href="/index.php#home" class="mobile-only"><i class="fa-solid fa-house-chimney"></i> Home</a>
         <a href="/my_posts.php"><i class="fa-solid fa-list"></i> My Posts</a>
         <a href="/profile.php"><i class="fa-regular fa-address-card"></i> Profile</a>
-        <a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     </nav>
   </header>
