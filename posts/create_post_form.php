@@ -11,8 +11,9 @@ $(document).ready(function(){
                 var courses = JSON.parse(response);
                 var courseListing = $('#courseListing');
                 courseListing.empty();
+                courseListing.append('<input type="radio" name="course" id="general" value="General"><label for="course">General</label><br>')
                 $.each(courses, function(i, course){
-                    courseListing.append('<input type="radio" name="course" id="course'+i+'" value="'+course.CourseID+'"><label for="course'+i+'">'+course.CourseName+'</label><br>');
+                    courseListing.append('<input type="radio" name="course" id="course" value="'+course.CourseNum+'"><label for="course'+i+'">'+course.CourseName+'</label><br>');
                 });
             }
         });
