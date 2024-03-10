@@ -39,6 +39,7 @@
         include("posts/filter_post_search.php");
 
 
+        $mystring = '';
         // Prints the table
         $res = $db->query('SELECT * FROM posts');
         $count = 1;
@@ -51,12 +52,11 @@
                 $row2 = $res2->fetchArray(SQLITE3_ASSOC);
                 $comments = $row2['cnt'];
 
-
                 echo "<a href='/posts/display_post.php?id={$row['0']}'>\n";
                 echo "<div class='post'>\n";
                 echo '<div class="post_header">';
                 echo '<div class="post_avatar">';
-                echo '<img src="https://cdn3.emoji.gg/emojis/9069-sadcat-thumbsup.png" alt="user profile">';
+                echo "<img src='https://source.unsplash.com/random/200x200?sig={$row['2']}' alt='user profile'>";
                 echo '</div>';
                 echo '<div class="post_info">';
                 echo '<ul class="post_user">';
