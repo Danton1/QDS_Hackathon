@@ -52,6 +52,14 @@
                         </p>
                     </div>
                 </div>
+                <div class="right-card">
+                    <div class="text-box">
+                        <p class="text-title">Connect with Peers</p>
+                        <p class="paragraph">Looking for new friends? Connect with fellow students
+                        in your program, or someone from a whole new group!
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     
