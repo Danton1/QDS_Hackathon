@@ -19,7 +19,6 @@
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
-        include("./../config_session.php");
         include(__DIR__ . "/../src/components/header.php");
         include("./../include_db.php");  // Connects the the db
 
