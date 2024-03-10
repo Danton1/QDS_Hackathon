@@ -48,7 +48,7 @@ require_once('include_db.php');
                         <?php
                             $results = $db->query("SELECT * FROM programs");
                             while ($row = $results->fetchArray()) {
-                                echo "<option value='{$row['ProgramID']}'>{$row['ProgramName']}</option>";
+                                echo "<option value='{$row['ProgramName']}'>{$row['ProgramName']}</option>";
                             }
                         ?>
                     </select>
