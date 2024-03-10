@@ -11,10 +11,13 @@ $(document).ready(function(){
                 var courses = JSON.parse(response);
                 var courseListing = $('#courseListing');
                 courseListing.empty();
-                courseListing.append('<input type="radio" name="course" id="general" value="General"><label for="course">General</label><br>')
+                var selectElement = $('<select name="course"></select>'); // Create select element
+                selectElement.append('<option value="" disabled selected>Choose a channel</option>');
+                selectElement.append('<option value="General">General</option>');
                 $.each(courses, function(i, course){
-                    courseListing.append('<input type="radio" name="course" id="course" value="'+course.CourseNum+'"><label for="course'+i+'">'+course.CourseName+'</label><br>');
+                    selectElement.append('<option value="'+course.CourseNum+'">'+course.CourseName+'</option>');
                 });
+                courseListing.append(selectElement); // Append select element to courseListing
             }
         });
     });
@@ -57,9 +60,7 @@ $program = $row['ProgramName'];
         <option value="5">5</option>
         <option value="co-op">Co-op</option>
     </select>
-
     <div id="courseListing"></div>
-
     <div class='create'>
         <input type="submit" value="Create " name="create" />
     </div>
