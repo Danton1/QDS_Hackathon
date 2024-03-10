@@ -150,8 +150,39 @@
         ('MATH 3042', 'Applied Probability and Statistics', 'Computer Systems Technology', 3),
         ('COMP 4537', 'Internet Software Architecture', 'Computer Systems Technology', 4),
         ('COMP 4736', 'Introduction to Operating Systems', 'Computer Systems Technology', 4),
-        ('LIBS 7102', 'Ethics for Computing Professionals', 'Computer Systems Technology', 4)";
-
+        ('LIBS 7102', 'Ethics for Computing Professionals', 'Computer Systems Technology', 4),
+            -- business:
+        ('BSYS 1000', 'Business Information Systems', 'Business Information Technology Management', 1),
+        ('COMM 1100', 'Business Communication 1', 'Business Information Technology Management', 1),
+        ('ECON 2100', 'Microeconomics', 'Business Information Technology Management', 1),
+        ('MKTG 1102', 'Essentials of Marketing', 'Business Information Technology Management', 1),
+        ('OPMT 1103', 'Introduction to Operations Management', 'Business Information Technology Management', 1),
+        ('OPMT 1110', 'Business Mathematics', 'Business Information Technology Management', 1),
+        ('BSYS 2000', 'Applied Data Analytics in Excel', 'Business Information Technology Management', 2),
+        ('BSYS 2065', 'Business Systems Programming*', 'Business Information Technology Management', 2),
+        ('BUSA 2100', 'Principles of Management*', 'Business Information Technology Management', 2),
+        ('COMM 2200', 'Business Communication 2', 'Business Information Technology Management', 2),
+        ('ECON 2200', 'Macroeconomics', 'Business Information Technology Management', 2),
+        ('FMGT 2152', 'Accounting for Management', 'Business Information Technology Management', 2),
+        ('OPMT 1130', 'Business Statistics', 'Business Information Technology Management', 2),
+        ('OPMT 1174', 'Project Management*', 'Business Information Technology Management', 2),
+        ('ORGB 1100', 'Organizational Behaviour*', 'Business Information Technology Management', 2),
+        ('BSYS 3000', 'Cloud Business Development 1', 'Business Information Technology Management', 3),
+        ('BSYS 3105', 'Information Technology 1', 'Business Information Technology Management', 3),
+        ('BSYS 3205', 'Business Intelligence 1', 'Business Information Technology Management', 3),
+        ('BSYS 3355', 'Management Information Systems', 'Business Information Technology Management', 3),
+        ('BUSA 4850', 'Consulting Skills and Problem Solving*', 'Business Information Technology Management', 3),
+        ('FMGT 3221', 'Management Accounting Administration', 'Business Information Technology Management', 3),
+        ('OPMT 2172', 'Applied Management Engineering', 'Business Information Technology Management', 3),
+        ('OPMT 3301', 'Quantitative Methods for Business', 'Business Information Technology Management', 3),
+        ('BLAW 3600', 'Computers and the Law', 'Business Information Technology Management', 4),
+        ('BSYS 4000', 'Cloud Business Development 2', 'Business Information Technology Management', 4),
+        ('BSYS 4075', 'Integrated Business Processes', 'Business Information Technology Management', 4),
+        ('BSYS 4205', 'Business Intelligence 2*', 'Business Information Technology Management', 4),
+        ('BSYS 4905', 'Directed Studies*', 'Business Information Technology Management', 4),
+        ('BUSA 4800', 'Management Policy', 'Business Information Technology Management', 4),
+        ('FMGT 4530', 'Enterprise Finance', 'Business Information Technology Management', 4),
+        ('OPMT 4170', 'Applied Project Management*', 'Business Information Technology Management', 4);
         $db->exec($SQL_insert_courses_data);
     }
 ?>
