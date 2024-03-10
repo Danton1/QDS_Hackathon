@@ -82,9 +82,17 @@
     cursor: pointer;
 }
 
-@media (max-width: 1128px) {
+@media (max-width:1380px) {
     .profile_wrap {
         width: 80%;
+    }
+    .profile_options {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1128px) {
+    .profile_wrap {
         height: auto;
         align-items: center;
     }
@@ -104,16 +112,12 @@
     }
 
     .term_info {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .edit_btn {
         margin-top: 10px;
         font-size: 1rem;
-    }
-
-    .profile_options {
-        width: 80%;
     }
 
     .profile_options li {
@@ -123,6 +127,7 @@
 
 @media (max-width: 796px) {
     .profile_wrap {
+        padding: 8%;
         flex-direction: column;
     }
 
