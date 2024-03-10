@@ -76,7 +76,7 @@ function updateTermsSelect() {
     const termSelect = document.getElementById('termSelect');
 
     // Perform AJAX request to fetch program details
-    fetch('get_program_details.php?programId=' + programSelect)
+    fetch('src/controllers/get_program_details.php?programId=' + programSelect)
         .then(response => response.json())
         .then(data => {
             const termSelect = document.getElementById('termSelect');

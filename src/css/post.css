@@ -1,6 +1,52 @@
+main {
+  padding-bottom: 2rem;
+}
+
 .comment{
-  margin-inline: auto;
-  margin-top: 2.5rem;
+  margin: 2.5rem auto 1rem auto;
   max-width: 60%;
+  padding: 0 0 2.5rem 0;
+}
+
+.comment_desc {
+  padding: 1rem 1rem  0 1rem;
+  /* padding: 0 10px; */
+  display: flex;
+  align-items: center;
+}
+
+.comment_desc p {
+  margin: 0;
   padding: 0;
+}
+.post_desc i{
+  margin-right: 0.5rem;
+  color: #3595F1;
+}
+.post_desc {
+  padding: 1rem;
+}
+.create {
+	display: flex;
+	align-items: center;
+  margin-inline: auto;
+}
+.create input {
+	margin-inline: auto;
+}
+.create input[type="submit"]{
+  width: 30%;
+  margin-inline: auto;
+  padding: 0.5rem;
+  margin: 0 auto 2.5rem auto;
+  border-radius: 8px;
+  border: 1px solid #3595f1;
+  font-size: 1.2rem;
+  background-color: rgb(208, 217, 225);
+  color: #000;
+  cursor: pointer;
+}
+.create input[type="submit"]:hover {
+	background-color: #3595f1;
+	color: #fff;
 }

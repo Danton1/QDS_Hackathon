@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- <div class="wrap"> -->
+    <main>
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
@@ -88,7 +88,7 @@
                 echo '</ul>';
                 echo '</div>';
                 echo '</div>';
-                echo "<div class='post_desc'>\n";
+                echo "<div class='post_desc comment_desc'>";
                 // echo "<h1>{$row['3']}</h1>\n"; // Title
                 // echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
                 echo "<p><i class='fa-solid fa-chevron-right'></i> {$row['2']}</p>";  // Post
