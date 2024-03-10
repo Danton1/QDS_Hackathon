@@ -22,6 +22,9 @@
         include(__DIR__ . "/../src/components/header.php");
         include("./../include_db.php");  // Connects the the db
 
+        echo "<button id='go-back'>Replace me with something</button>";
+
+
         // Getting id from the url
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -134,6 +137,10 @@
 </html>
 
 <script>
+    document.getElementById("go-back").addEventListener("click", () => {
+        history.back();
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         var likeButtons = document.querySelectorAll('.like-btn');
         console.log(likeButtons);

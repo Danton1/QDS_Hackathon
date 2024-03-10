@@ -29,6 +29,8 @@
         ?>
 
         <main class ='main_wrap'>
+            <button id='go-back'>Replace me with something</button>
+
             <?php
             $id = $_SESSION['id'];
             $res = $db->query('SELECT * FROM posts WHERE UserID = ' . $id);
@@ -71,6 +73,10 @@
 
 
 <script>
+    document.getElementById("go-back").addEventListener("click", () => {
+        history.back();
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         var likeButtons = document.querySelectorAll('.like-btn');
         likeButtons.forEach(function(button) {
