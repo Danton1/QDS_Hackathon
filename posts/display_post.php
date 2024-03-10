@@ -103,6 +103,9 @@
         <label for="post">Add a new comment: </label>
         <textarea for="post" name="post" id="post"></textarea>
     </div>
+    <div class='create'>
+        <input type="submit" value="Reply" name="create" />
+    </div>
     <script src="../src/js/app.js"></script>
 </body>
 

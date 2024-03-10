@@ -17,7 +17,7 @@
     <div class="wrap">
         <!-- Navbar -->
         <?php $title = 'Profile' ?>
-        <?php include("src/components/header.php");
+        <?php include("src/components/header_logged_in.php");
         include("./include_db.php");
         include("config_session.php");  
 
