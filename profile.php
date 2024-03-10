@@ -16,13 +16,10 @@
     <div class="wrap">
         <!-- Navbar -->
         <?php $title = 'Profile' ?>
-        <?php include("src/components/header_logged_in.php");
+        <?php 
         include("./include_db.php");
         include("config_session.php");  
-
-    include("./include_db.php");
-    include("config_session.php");
-    include("src/components/header.php");
+        include("src/components/header.php");
     ?>
     <div class="wrap">
         <?php
@@ -57,8 +54,8 @@
             }
             $userid = $row[0];
             $name = $row[1];
-            $program = $row[2];
-            $term = $row[3];
+            $program = $row[4];
+            $term = $row[5];
         } else {
             header('Location: /../login.php');
             exit;
@@ -76,9 +73,8 @@
                     <div class="user_info">
                         <h3 class="user_name"><?php echo $name ?></a></h3>
                         <div class="term_info">
-                            <p>CST</p>
-                            <p>|</p>
-                            <p>Term 2</p>
+                            <p><?php echo $program; ?></p>
+                            <p>Term <?php echo $term; ?></p>
                         </div>
                     </div>
                     <div class="edit_btn">
@@ -88,9 +84,6 @@
                 <ul class="profile_options">
                     <li class="mypost">
                         <a href="./my_posts.php">See my posts</a>
-                    </li>
-                    <li class="setting">
-                        Setting
                     </li>
                 </ul>
                 <!-- <div class="post_wrap">

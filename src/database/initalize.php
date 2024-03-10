@@ -193,6 +193,6 @@
         PRIMARY KEY (user_id, post_id),
         FOREIGN KEY (user_id) REFERENCES users(ID) ON DELETE CASCADE,
         FOREIGN KEY (post_id) REFERENCES posts(ID) ON DELETE CASCADE
-    );";
+    )";
     $db->exec($SQL_create_likes_table);
 ?>

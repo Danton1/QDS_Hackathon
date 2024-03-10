@@ -38,7 +38,6 @@
                     echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
                     echo "<p>{$row['4']}</p>";  // Post
                     echo "<div class='stats'>\n";
-                        echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
                         echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
                         echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
                         echo "<div><a href='posts/delete_post.php?id={$row['0']}'><i class='fa-regular fa-trash-can'></i>Delete</a></div>\n";  // Delete

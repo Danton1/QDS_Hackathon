@@ -63,6 +63,11 @@
 	color: #3595f1;
 }
 
+.stats a {
+	margin-right: 0.5rem;
+	color: rgb(112, 117, 123);
+}
+
 .fa-thumbs-up:hover {
 	color: #3595f1;
 	font-size: 1.6rem;
@@ -83,11 +88,19 @@
 	cursor: pointer;
 }
 
+/* new post css starts here */
 .new-post {
-	max-width: 50%;
 	max-width: 60%;
 	padding: 20px 50px;
-	cursor: unset !important;
+  min-height: unset !important;
+}
+
+#new-post-btn {
+  display: none;
+}
+
+#new-post-btn:checked ~ #new-post-form {
+  display: block;
 }
 
 .new-post .create {
@@ -99,6 +112,10 @@
 	font-size: 2.5rem;
 	margin: 0;
 	text-align: center;
+}
+
+.new-post form {
+  display: none;
 }
 
 .new-post label {
@@ -154,6 +171,7 @@
 	background-color: #3595f1;
 	color: #fff;
 }
+/* new post css ends here */
 
 .program_btn {
 	width: fit-content;
