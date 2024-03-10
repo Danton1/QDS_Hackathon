@@ -3,15 +3,18 @@
 }
 
 .post{
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: 13px;
   background-color: #ffffff;
-  max-width: 85%;
+  max-width: 60%;
   margin-inline: auto;
   margin-top: 2rem;
   color: #000;
+  box-shadow: rgba(99, 99, 99, 0.271) 1px 2px 8px 0px;
+}
+
+.post_desc{
   border: 3px dashed transparent;
-  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .post h1{
@@ -29,6 +32,7 @@
 .post:hover{
   box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
   cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.448);
 }
 
 .post h1 i {
@@ -38,8 +42,8 @@
   top: -0.2rem;
   position: relative;
 }
+
 .stats {
-  margin-top: 8rem;
   position: relative;
   width: 100%;
   color: #70757b;
@@ -47,6 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 1.5rem;
 }
 
 .stats i {
@@ -137,4 +142,99 @@
 .new-post input[type="submit"]:hover{
   background-color: #3595F1;
   color: #fff;
+}
+
+
+.program_btn {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: #263479;
+  color: #eee;
+  border-radius: 30px;
+  position: absolute;
+  z-index: 10000000;
+}
+
+.program_btn a {
+  color: #eee;
+}
+
+.program_btn i {
+  margin-left: 20px;
+}
+
+/* Post style starts here */
+.posts {
+  padding: 0 0 30px 0;
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow-y: scroll;
+}
+
+/* Hiding scroll bar while making it still scrollable */
+.posts {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.posts::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.post {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  min-height: 150px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+/* post header (user profile, name, date, etc) */
+.post_header {
+  width: 100%;
+  height: 70px;
+  padding: 0 20px 0 15px;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post_info {
+  width: calc(100% - 50px - 15px);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post_term {
+  font-size: 13px;
+}
+
+
+/* Mobile responsive starts here */
+@media (max-width: 796px) {
+  .posts {
+      padding: 0 0 20px 0;
+  }
+  .program_btn{
+      position: unset;
+      margin-inline: auto;
+      font-size: 1.6rem;
+  }
+  .program_btn span{
+      display: unset;
+  }
 }
