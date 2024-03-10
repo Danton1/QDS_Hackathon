@@ -106,6 +106,10 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
     display: none;
 }
 
+.header .navbar .desktop-only{
+    display: flex;
+}
+
 .logo-img {
     height: 80%;
     width: 6rem;
@@ -179,6 +183,10 @@ main {
 
     .header .navbar .mobile-only{
         display: block;
+    }
+
+    .header .navbar .desktop-only{
+        display: none;
     }
 
     .header .navbar {

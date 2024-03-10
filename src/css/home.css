@@ -12,6 +12,8 @@
     background-color: #263479;
     color: #eee;
     border-radius: 30px;
+    position: absolute;
+    z-index: 10000000;
 }
 
 .program_btn a {
@@ -111,5 +113,13 @@
 @media (max-width: 796px) {
     .posts {
         padding: 0 0 20px 0;
+    }
+    .program_btn{
+        position: unset;
+        margin-inline: auto;
+        font-size: 1.6rem;
+    }
+    .program_btn span{
+        display: unset;
     }
 }

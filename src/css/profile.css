@@ -74,9 +74,44 @@
     margin-bottom: 30px;
 }
 
-@media (max-width: 796px) {
+@media (max-width: 1128px) {
+
     .profile_wrap {
+        width: 80%;
+        padding: 50px 0;
         height: auto;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .user_info {
+        margin: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user_name {
+        font-size: 2.6rem;
+    }
+
+    .term_info {
+        font-size: 1.6rem;
+    }
+
+    .edit_btn {
+        margin-top: 20px;
+        position: unset;
+    }
+
+    .post_wrap {
+        width: 80%;
     }
 }
