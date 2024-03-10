@@ -37,7 +37,7 @@
             // If one of the fields is empty, redirect to index
             if (empty($title) || empty($post) || empty($course)) {
                 header('Location: /../index.php');
-                exit;
+                exit();
             }
 
             // Find user information from db
@@ -48,7 +48,7 @@
             $row = $res->fetchArray(SQLITE3_NUM);
             if ($row === false) {
                 header('Location: /../index.php');
-                exit;
+                exit();
             }
             $userid = $row[0];
             $name = $row[1];
@@ -62,7 +62,7 @@
 
             echo $program;
             header('Location: ../../index.php');
-            exit;
+            exit();
         }
         ?>
 
