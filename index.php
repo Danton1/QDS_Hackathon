@@ -26,10 +26,10 @@
     <!-- main -->
     <main class='main_wrap'>
         <!-- <div class="home"> -->
-        <div class="program_btn">
+        <!-- <div class="program_btn">
             <a href="./program.php">Go to CST channel
             <i class="fa-solid fa-angle-right"></i></a>
-        </div>
+        </div> -->
 
         <?php
         include("posts/filter_post_search.php");

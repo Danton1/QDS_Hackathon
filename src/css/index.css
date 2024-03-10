@@ -173,7 +173,60 @@
 }
 /* new post css ends here */
 
-.program_btn {
+/* Filter css starts here */
+.filter_wrap {
+  margin: 20px auto 0 auto;
+  width: 80%;
+  /* padding: 0 0.5rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter_wrap form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter_wrap select {
+  padding: 10px 20px;
+  border-radius: 13px;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+
+.filter_wrap input {
+  padding: 10px 20px;
+  border-radius: 13px;
+  background-color: #3596f1;
+  border: 1px solid gray;
+}
+
+#filterTerm {
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.filter input {
+  /* margin-left: 20px; */
+  margin-right: 40px;
+}
+
+#filterListing {
+  margin-right: 20px;
+}
+
+.filter_wrap a {
+  padding: 10px 30px;
+  border-radius: 13px;
+  background-color: #263479;
+  border: 1px solid gray;
+}
+
+/* Filter css ends here */
+
+/* .program_btn {
 	width: fit-content;
 	padding: 10px 20px;
 	margin: 20px;
@@ -195,7 +248,7 @@
 
 .program_btn i {
 	margin-left: 20px;
-}
+} */
 
 /* Post style starts here */
 .posts {
