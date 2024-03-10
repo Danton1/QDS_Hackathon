@@ -238,12 +238,6 @@ main {
         font-size: 1.3rem;
         padding: 1rem;
     }
-
-    .post p,
-    .post a,
-    .stats {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 796px) {
@@ -290,6 +284,16 @@ main {
 
 @media (max-width: 450px) {
     html {
-        font-size: 51%;
+        font-size: 65%;
+    }
+}
+@media (max-width: 325px) {
+    .logo {
+        font-size: 100%;
+        padding: 0;
+    }
+    #nav_login a{
+        font-size: 90%;
+        padding: 0;
     }
 }
