@@ -33,7 +33,6 @@
             // Sanitizing the post data
             $post = sanitize_input($post);
             $title = sanitize_input($title);
-            echo $course;
 
             // If one of the fields is empty, redirect to index
             if (empty($title) || empty($post) || empty($course)) {
