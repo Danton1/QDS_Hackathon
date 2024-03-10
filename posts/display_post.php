@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/../src/css/reset.css">
+    <link rel="stylesheet" href="/../src/css/index.css">
     <link rel="stylesheet" href="/../src/css/post.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-    <div class="wrap">
+    <!-- <div class="wrap"> -->
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
@@ -39,65 +40,57 @@
             $post = $row[4];
             $likes = $row[5];
             $date= $row[6];
+            
+            echo "<div class='post'>\n";
+            echo '<div class="post_header">';
+            echo '<div class="post_avatar">';
+            echo '<img src="https://cdn3.emoji.gg/emojis/9069-sadcat-thumbsup.png" alt="user profile">';
+            echo '</div>';
+            echo '<div class="post_info">';
+            echo '<ul class="post_user">';
+            echo "<li>{$row['1']}</li>";  // UserID
+            echo '<li class="post_term">Term 1 | CST</li>';
+            echo '</ul>';
+            echo '</div>';
+            echo '</div>';
+            echo "<div class='post_desc'>\n";
+            echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
+            echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
+            echo "<p>{$row['4']}</p>";  // Post
+            echo "<div class='stats'>\n";
+            echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
+            echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
+            echo "</div>\n";
+            echo "</div>\n";
+            echo "</div>\n";
+            echo "</div>\n";
         } else {
             header('Location: /../index.php');
             exit;
         }
         ?>
 
-        <div class="main_wrap">
-            <div class="posts">
-                <div class="filter">
-                    Filte by ▽
-                </div>
-                <div class="post_wrap">
-                    <div class='post'>
-                        <h1><i class='fa-solid fa-chevron-right'></i> Title</h1>
-                        <b></b>
-                        <p></p>
-                        <div class='stats'>
-                        <div><i class='fa-regular fa-user'><?php echo "{$row['4']}"?></i></div>
-                        <div><i class='fa-regular fa-clock'></i></div>
-                        <div><i class='fa-regular fa-thumbs-up'></i></div>
-                        <div><i class='fa-regular fa-comment'></i></div>
-                    </div>
-                </div>
-            </div>
-            <table>
-                <tr>
-                    <td>Username:</td>
-                    <td><a href="/../profile.php?id=<?php echo $userid ?>"><?php echo $UserName ?></a></td>
-                </tr>
-                <tr>
-                    <td>Title: </td>
-                    <td><?php echo $title ?></td>
-                </tr>
-                <tr>
-                    <td>Post: </td>
-                    <td><?php echo $post ?></td>
-                </tr>
-                <tr>
-                    <td>likes: </td>
-                    <td><?php echo $likes ?></td>
-                </tr>
-                <tr>
-                    <td>date: </td>
-                    <td><?php echo $date ?></td>
-                </tr>
-            </table>
-        </div>
 
         <?php 
         $res = $db->query("SELECT * FROM comments WHERE PostID = $id");
         while ($row = $res->fetchArray()) {
-            echo "<table>\n";
-            echo "<tr><th>User</th>".
-                    "<th>comment</th></tr>\n";
-                echo "<tr>";
-                echo "<td>{$row['4']}</td>";  // Username
-                echo "<td>{$row['2']}</td>";  // Comment
-                echo "</tr>";
-                echo "</table>";    
+
+                echo "<div class='post'>\n";
+                echo '<div class="post_header">';
+                echo '<div class="post_avatar">';
+                echo '<img src="https://source.unsplash.com/random/200x200" alt="user profile">';
+                echo '</div>';
+                echo '<div class="post_info">';
+                echo '<ul class="post_user">';
+                echo "<li>{$row['4']}</li>";  // UserID
+                // echo "<li class='post_term'>{$row['7']} | {$row['8']}</li>";
+                echo '</ul>';
+                echo '</div>';
+                echo '</div>';
+                echo "<div class='post_desc'>\n";
+                // echo "<h1>{$row['3']}</h1>\n"; // Title
+                // echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
+                echo "<p><i class='fa-solid fa-chevron-right'></i> {$row['2']}</p>";  // Post
             };
 
 
@@ -105,7 +98,11 @@
 
         <?php include(__DIR__ . "/../src/components/footer.php"); ?>
     </div>
-
+    </div>
+    <div class="comment new-post">
+        <label for="post">Add a new comment: </label>
+        <textarea for="post" name="post" id="post"></textarea>
+    </div>
     <script src="../src/js/app.js"></script>
 </body>
 

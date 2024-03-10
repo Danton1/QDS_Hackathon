@@ -185,4 +185,14 @@
         ('OPMT 4170', 'Applied Project Management*', 'Business Information Technology Management', 4);
         $db->exec($SQL_insert_courses_data);
     }
+
+    $SQL_create_likes_table = "CREATE TABLE IF NOT EXISTS likes (
+        user_id INTEGER NOT NULL,
+        post_id INTEGER NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (user_id, post_id),
+        FOREIGN KEY (user_id) REFERENCES users(ID) ON DELETE CASCADE,
+        FOREIGN KEY (post_id) REFERENCES posts(ID) ON DELETE CASCADE
+    );";
+    $db->exec($SQL_create_likes_table);
 ?>

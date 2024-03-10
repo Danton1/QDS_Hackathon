@@ -1,7 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $('select[name="term"]').change(function(){
+    $('#createTerm').change(function(){
         var term = $(this).val();
         $.ajax({
             url: 'posts/get_courses.php',
@@ -51,7 +51,7 @@ $program = $row['ProgramName'];
     <input type="hidden" for="id" name="id" id="id" value="<?php echo $id; ?>">
     <input type="hidden" for="program" name="program" id="program" value="<?php echo $program; ?>">
 
-    <select name="term">
+    <select name="term" id="createTerm">
         <option value="" disabled selected>Term</option>
         <option value="1">1</option>
         <option value="2">2</option>
