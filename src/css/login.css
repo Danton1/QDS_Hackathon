@@ -38,3 +38,7 @@
   background-color: #3596f1;
   margin-bottom: 10px;
 }
+
+.login_wrap a {
+	font-size: 1rem;
+}
