@@ -176,6 +176,7 @@
 /* Filter css starts here */
 .filter_wrap {
   margin: 20px auto 0 auto;
+  max-width: 90%;
   width: 80%;
   /* padding: 0 0.5rem; */
   display: flex;
@@ -209,12 +210,18 @@
 }
 
 .filter input {
-  /* margin-left: 20px; */
   margin-right: 40px;
 }
 
 #filterListing {
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#filterListing option {
+  width: 100%;
 }
 
 .filter_wrap a {
@@ -223,32 +230,7 @@
   background-color: #263479;
   border: 1px solid gray;
 }
-
 /* Filter css ends here */
-
-/* .program_btn {
-	width: fit-content;
-	padding: 10px 20px;
-	margin: 20px;
-	background-color: #263479;
-	opacity: 60%;
-	color: #eee;
-	border-radius: 30px;
-	position: absolute;
-	z-index: 10000000;
-}
-
-.program_btn:hover {
-	opacity: 100%;
-}
-
-.program_btn a {
-	color: #eee;
-}
-
-.program_btn i {
-	margin-left: 20px;
-} */
 
 /* Post style starts here */
 .posts {
@@ -315,7 +297,7 @@
 
 @media (max-width: 1200px){
 	.post_desc p{
-			font-size: 1.2rem;
+		font-size: 1.2rem;
 	}
 	.post_desc b{
 		font-size: 1rem;
@@ -330,6 +312,35 @@
 
 /* Mobile responsive starts here */
 @media (max-width: 796px) {
+  .filter_wrap {
+    flex-direction: column;
+  }
+
+  .filter_wrap form {
+    flex-direction: column;
+  }
+
+  #filterTerm {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #filterListing select {
+    /* max-width: 400px; */
+    width: 80%;
+  }
+  
+  .filter input {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  #filterListing {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
 	.posts {
 		padding: 0 0 20px 0;
 	}

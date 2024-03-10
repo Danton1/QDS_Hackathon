@@ -1,6 +1,6 @@
 <!-- HTML snippet that is inserted when the navbarplaceholder is called upon -->
 <header class="header">
-  <a href="/index.php" class="logo">
+  <a href="/landing.php" class="logo">
     <img src="/src/imgs/icon.png" class="logo-img" alt="">
     <span>School</span>Board
   </a>
