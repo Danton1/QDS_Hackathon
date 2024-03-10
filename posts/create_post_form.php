@@ -10,7 +10,7 @@ $program = $row['ProgramName'];
 ?>
 
 
-<h1>Create a Post</h1>
+<h1><i class='fa-solid fa-chevron-right'></i>Create a Post</h1>
 <form action="/posts/create_post.php" method="post">
     <div>
         <label for="title">Title: </label>
@@ -25,7 +25,17 @@ $program = $row['ProgramName'];
     <input type="hidden" for="id" name="id" id="id" value="<?php echo $id; ?>">
     <input type="hidden" for="program" name="program" id="program" value="<?php echo $program; ?>">
 
+    <select name="program">
+        <option value="" disabled selected>Term</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="co-op">Co-op</option>
+    </select>
+
     <div class='create'>
-        <input type="submit" value="Create 👉" name="create" />
+        <input type="submit" value="Create " name="create" />
     </div>
 </form>
