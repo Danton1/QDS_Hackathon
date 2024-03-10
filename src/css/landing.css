@@ -1,6 +1,6 @@
 .main_wrap {
     display: grid;
-    grid-template-rows: 50vh 1fr;
+    grid-template-rows: 70vh 30vh;
     grid-template-columns: 1fr;
     background-color: rgb(249, 252, 255);
     overflow-y: scroll;

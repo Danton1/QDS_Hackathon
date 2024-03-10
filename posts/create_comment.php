@@ -31,7 +31,8 @@
             extract($_POST);
 
             // Sanitizing the post data
-            $post = sanitize_input($post);
+            // $post = sanitize_input($post);
+            $post = $_POST['post'];
 
             // If one of the fields is empty, redirect to index
             if (empty($post)) {
@@ -39,11 +40,18 @@
                 exit;
             }    
 
-            $SQL_insert_data = "INSERT INTO comments (postID, comment, commenterID, commenterName)
-            VALUES ('$post_id', '$post', '$commenter_id', '$commenter_name')";
+            // $SQL_insert_data = "INSERT INTO comments (postID, comment, commenterID, commenterName)
+            // VALUES ('$post_id', '$post', '$commenter_id', '$commenter_name')";
 
-            $db->exec($SQL_insert_data);
-            $changes = $db->changes();
+            // $db->exec($SQL_insert_data);
+            // $changes = $db->changes();
+            $stmt = $db->prepare("INSERT INTO comments (postID, comment, commenterID, commenterName) VALUES (:post_id, :post, :commenter_id, :commenter_name)");
+            $stmt->bindValue(':post_id', $_POST['post_id'], SQLITE3_INTEGER);
+            $stmt->bindValue(':post', $post, SQLITE3_TEXT); 
+            $stmt->bindValue(':commenter_id', $_POST['commenter_id'], SQLITE3_INTEGER);
+            $stmt->bindValue(':commenter_name', $_POST['commenter_name'], SQLITE3_TEXT);
+
+            $result = $stmt->execute();
 
             header('Location: display_post.php?id=' . $post_id);
             exit;

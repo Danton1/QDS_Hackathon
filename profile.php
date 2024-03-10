@@ -20,8 +20,13 @@
         include("./include_db.php");
         include("config_session.php");  
         include("src/components/header.php");
+
+        echo "<button id='go-back'>Replace me with some back icon</button>";
     ?>
     <div class="wrap">
+        
+        <button id='go-back'>Replace me with something</button>
+
         <?php
         // Getting id from the url
         if (isset($_GET['id'])) {
@@ -96,3 +101,9 @@
 </body>
 
 </html>
+
+<script> 
+    document.getElementById("go-back").addEventListener("click", () => {
+        history.back();
+    });
+</script>

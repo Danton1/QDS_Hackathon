@@ -15,12 +15,16 @@
 </head>
 
 <body>
+    <div class="wrap">
     <main>
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
         include(__DIR__ . "/../src/components/header.php");
         include("./../include_db.php");  // Connects the the db
+
+        echo "<button class='back_btn' id='go-back'><i class='fa-solid fa-angle-left'></i><p>Go back</p></button>";
+
 
         // Getting id from the url
         if (isset($_GET['id'])) {
@@ -52,7 +56,7 @@
             $likeButtonClass = $liked_by_user ? 'like-btn liked' : 'like-btn';
                 
             
-            echo "<div class='post'>\n";
+            echo '<div class="main_wrap"><div class="post">';
             echo '<div class="post_header">';
             echo '<div class="post_avatar">';
             echo '<img src="https://cdn3.emoji.gg/emojis/9069-sadcat-thumbsup.png" alt="user profile">';
@@ -64,6 +68,7 @@
             echo '</ul>';
             echo '</div>';
             echo '</div>';
+            // echo '</div>';
             echo "<div class='post_desc'>\n";
             echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
             echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
@@ -78,7 +83,7 @@
             echo "</div>\n";
             echo "</div>\n";
             echo "</div>\n";
-            echo "</div>\n";
+            // echo "</div>\n";
         } else {
             header('Location: /../index.php');
             exit;
@@ -103,8 +108,11 @@
                 echo '</div>';
                 echo "<div class='post_desc comment_desc'>";
                 echo "<p><i class='fa-solid fa-chevron-right'></i>" . nl2br(htmlspecialchars($row['2'])) . "</p>";  // Post
+                // echo "</div>\n";
                 echo "</div>\n";
                 echo "</div>\n";
+
+                // echo "</div>\n";
             };
 
             $logged_user_id = $_SESSION['id'];
@@ -113,27 +121,32 @@
             $logged_user_name = $row['1'];
         ?>
 
+        <form action="/posts/create_comment.php" method="post">
+            <div class="comment new-post">
+                <label for="post">Add a new comment: </label>
+                <textarea for="post" name="post" id="post"></textarea>
+            </div>
+            <input type="hidden" for="post_id" name="post_id" id="post_id" value="<?php echo $id; ?>">
+            <input type="hidden" for="commenter_id" name="commenter_id" id="commenter_id" value="<?php echo $logged_user_id; ?>">
+            <input type="hidden" for="commenter_name" name="commenter_name" id="commenter_name" value="<?php echo $logged_user_name; ?>">
+            <div class='create'>
+                <input type="submit" value="comment" name="comment" />
+            </div>
+        </form>
+    </main>
 </div>
-</div>
-<form action="/posts/create_comment.php" method="post">
-    <div class="comment new-post">
-        <label for="post">Add a new comment: </label>
-        <textarea for="post" name="post" id="post"></textarea>
-    </div>
-    <input type="hidden" for="post_id" name="post_id" id="post_id" value="<?php echo $id; ?>">
-    <input type="hidden" for="commenter_id" name="commenter_id" id="commenter_id" value="<?php echo $logged_user_id; ?>">
-    <input type="hidden" for="commenter_name" name="commenter_name" id="commenter_name" value="<?php echo $logged_user_name; ?>">
-    <div class='create'>
-        <input type="submit" value="comment" name="comment" />
-    </div>
-</form>
 <?php include(__DIR__ . "/../src/components/footer.php"); ?>
+    </div>
     <script src="../src/js/app.js"></script>
 </body>
 
 </html>
 
 <script>
+    document.getElementById("go-back").addEventListener("click", () => {
+        history.back();
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         var likeButtons = document.querySelectorAll('.like-btn');
         console.log(likeButtons);
