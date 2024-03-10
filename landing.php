@@ -25,7 +25,7 @@
             </div>
             <div>
                 <div class="landTitle">
-                    How to Best Use SchoolBoard
+                    Maximize The Use Of SchoolBoard
                 </div>
                 <div class="card">
                     <div class="text-box">
@@ -35,16 +35,14 @@
                         </p>
                     </div>
                 </div>
-                <br>
                 <div class="right-card">
                     <div class="text-box">
                         <p class="text-title">Teach To Learn</p>
                         <p class="paragraph">Respond with your best answer! You may be wrong,
-                        but you will be better. Enhance your understanding.
+                        but who is perfect? Enhance your understanding.
                         </p>
                     </div>
                 </div>
-                <br>
                 <div class="card">
                     <div class="text-box">
                         <p class="text-title">Practice Makes Perfect</p>
