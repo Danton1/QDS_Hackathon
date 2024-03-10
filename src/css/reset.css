@@ -188,9 +188,9 @@ main {
 }
 
 @media (max-width: 796px) {
-    main {
-        /* margin-top: 8rem; */
-    }
+    /* main {
+        margin-top: 8rem;
+    } */
 
     .main_wrap {
         height: calc(100vh - 60px - 50px);
@@ -222,6 +222,10 @@ main {
 
     .footer a {
         font-size: 2.3rem;
+    }
+
+    .footer i {
+        margin: 0;
     }
 }
 
