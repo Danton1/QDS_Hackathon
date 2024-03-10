@@ -1,0 +1,21 @@
+.main_wrap {
+    display: grid;
+    grid-template-rows: 500px 1fr;
+    grid-template-columns: 1fr;
+}
+
+.landing_pic {
+    background: top / cover no-repeat url("../imgs/landingPhoto.jpg") ;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cap {
+    width: 500px;
+    text-align: center;
+    font-size: 20px;
+    color: azure;
+    /* background-color: rgb(201, 201, 201, 0.3); */
+}

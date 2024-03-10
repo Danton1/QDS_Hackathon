@@ -28,6 +28,6 @@
     <input type="hidden" name="id" value=1>
 
     <div class='create'>
-        <input type="submit" value="create" name="create" />
+        <input type="submit" value="Create 👉" name="create" />
     </div>
 </form>

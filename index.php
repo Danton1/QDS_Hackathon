@@ -14,7 +14,7 @@
 
 <body>
 
-    <!-- <div class="wrap"> -->
+    <div class="wrap">
         
         <!-- Navbar -->
         <?php $title = 'Student Social Media' ?>
@@ -28,7 +28,7 @@
         ?>
 
     <!-- main -->
-    <main class='container'>
+    <main class='main_wrap'>
         <?php
         echo "<div class='post new-post' id='new_post'>\n";
         include("posts/create_post_form.php");
@@ -69,7 +69,7 @@
         
         <?php include("src/components/footer.php"); ?>
     
-    <!-- </div> -->
+    </div>
 
     <script src="./src/js/app.js"></script>
 </body>

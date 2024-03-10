@@ -16,11 +16,7 @@
         <!-- Navbar -->
         <?php $title = "Home"?>
         
-        <!-- <?php include("src/components/header.php") ?> -->
-        <header class="header">
-            <h3 class="page_title">General</h3>
-            <i class="fa-solid fa-bars"></i>
-        </header>
+        <?php include("src/components/header.php") ?>
         
         <!-- Main -->
         <div class="main_wrap">
