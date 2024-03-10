@@ -13,12 +13,11 @@
 </head>
 
 <body>
-
     <!-- <div class="wrap"> -->
         
         <!-- Navbar -->
-        <?php $title = 'Student Social Media' ?>
-        <?php
+        <?php 
+        $title = 'Student Social Media'; 
         include("./include_db.php");  // Connects the the db
         include("src/database/initalize.php");  // Initalizes the db
         include("config_session.php");
@@ -43,10 +42,10 @@
         $currentUserId = $_SESSION['id'];
 
         // Prints the table
-        if (isset($_POST['filter'])) {
+        if (isset($_POST['filter'])) { // If Filtered
             extract($_POST);
             $res = $db->query("SELECT * FROM posts WHERE course = '{$course}'");
-        } else {
+        } else { // If not filtered
             $res = $db->query('SELECT * FROM posts');
         }
         $count = 1;
