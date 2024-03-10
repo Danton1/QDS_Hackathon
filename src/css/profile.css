@@ -9,7 +9,6 @@
 }
 
 .profile_wrap {
-    /* margin-top: 30px; */
     width: 60%;
     height: calc(100% - 200px);
     padding: 3%;
@@ -37,13 +36,22 @@
 }
 
 .term_info {
-    font-size: 2rem;
+    width: 100%;
+    font-size: 1.6rem;
     display: flex;
+    flex-direction: column;
 }
 
 .term_info p {
     margin-top: 0;
     margin-right: 20px;
+}
+
+.term_info p:nth-child(2) {
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 60%;
+    border-top: 3px solid black;
 }
 
 .edit_btn {
@@ -74,44 +82,10 @@
     cursor: pointer;
 }
 
-/* .post_wrap {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.myPost_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.myPost_title select {
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.post_wrap h3 {
-    font-size: 2rem;
-    margin: 20px;
-}
-
-.post {
-    width: 100%;
-    height: 500px;
-    background-color: #fff;
-    border-radius: 13px;
-    margin-bottom: 30px;
-} */
-
 @media (max-width: 1128px) {
     .profile_wrap {
         width: 80%;
-        /* padding: 50px 0; */
         height: auto;
-        /* flex-direction: column; */
         align-items: center;
     }
 
@@ -121,12 +95,8 @@
     }
 
     .user_info {
-        /* margin: 0; */
-        /* margin-top: 20px; */
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
-        /* align-items: center; */
     }
 
     .user_name {
@@ -140,7 +110,6 @@
     .edit_btn {
         margin-top: 10px;
         font-size: 1rem;
-        /* position: unset; */
     }
 
     .profile_options {
@@ -150,10 +119,6 @@
     .profile_options li {
         font-size: 1.3rem;
     }
-
-    /* .post_wrap {
-        width: 80%;
-    } */
 }
 
 @media (max-width: 796px) {
@@ -178,7 +143,17 @@
     }
 
     .term_info {
+        justify-content: center;
+        align-items: center;
         font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .term_info p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
     }
 
     .edit_btn {

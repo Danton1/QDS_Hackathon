@@ -79,6 +79,7 @@
 	cursor: pointer;
 }
 
+/* new post css starts here */
 .new-post {
 	max-width: 60%;
 	padding: 20px 50px;
@@ -161,6 +162,7 @@
 	background-color: #3595f1;
 	color: #fff;
 }
+/* new post css ends here */
 
 .program_btn {
 	width: fit-content;
