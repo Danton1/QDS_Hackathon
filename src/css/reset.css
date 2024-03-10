@@ -21,7 +21,6 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
 }
 
 .footer{
-    
     display: none;
 }
 
@@ -112,7 +111,7 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
 
 .logo-img {
     height: 80%;
-    width: 6rem;
+    margin-right: 15px;
     object-fit: contain;
 }
 

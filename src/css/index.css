@@ -60,7 +60,13 @@
   color: #3595F1;
 }
 
-.stats i:hover {
+.fa-thumbs-up:hover {
+  color: #3595F1;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.fa-comment:hover {
   color: #3595F1;
   font-size: 1.6rem;
   font-weight: bold;
@@ -75,7 +81,8 @@
 }
 
 .new-post{
-  max-width: 50%;
+  max-width: 60%;
+  padding: 20px 50px;
   cursor: unset;
 }
 
