@@ -79,50 +79,15 @@
                     </div>
                 </div>
                 <ul class="profile_options">
+                    
+                    <a href="./my_posts.php">
                     <li class="mypost">
-                        <a href="./my_posts.php">See my posts</a>
+                        <span><i class="fa-solid fa-chevron-right"></i> See my posts</span>
                     </li>
+                </a>
                 </ul>
-                <!-- <div class="post_wrap">
-                    <div class="myPost_title">
-                        <h3>My posts</h3>
-                        <select name="filter" id="filter_posts">
-                            <option value="" disabled selected>Filter by</option>
-                            <option value="term">Filter by term</option>
-                            <option value="course">Filter by course</option>
-                            <option value="date">Filter by date</option>
-    
-                        </select>
-                    </div>
-                    <div class="post"></div>
-                    <div class="post"></div>
-                    <div class="post"></div>
-                    <div class="post"></div>
-                </div> -->
             </div>
         </div>
-
-        <!-- Displays user posts -->
-        <?php
-        $res = $db->query("SELECT * FROM posts WHERE UserID = $userid");
-
-        $count = 1;
-        while ($row = $res->fetchArray()) {
-            echo "<h1>Post $count</h1>\n";
-            echo "<table>\n";
-            echo "<tr><th>Title</th>" .
-                "<th>Post</th>" .
-                "<th>Date</th></tr>\n";
-            echo "<tr>";
-            echo "<td><a href='/posts/display_post.php?id={$row['0']}'>{$row['3']}</a></td>";  // Title
-            echo "<td>{$row['4']}</td>";  // Post
-            echo "<td>{$row['6']}</td>";  // Date
-            echo "</tr>";
-            echo "</table>";
-
-            $count++;
-        };
-        ?>
 
         <?php include("src/components/footer.php"); ?>
     </div>
