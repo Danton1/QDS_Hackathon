@@ -73,9 +73,8 @@
                     <div class="user_info">
                         <h3 class="user_name"><?php echo $name ?></a></h3>
                         <div class="term_info">
-                            <b><?php echo $program; ?></b>
-                            <p>|</p>
-                            <p><?php echo $term; ?></p>
+                            <p><?php echo $program; ?></p>
+                            <p>Term <?php echo $term; ?></p>
                         </div>
                     </div>
                     <div class="edit_btn">
