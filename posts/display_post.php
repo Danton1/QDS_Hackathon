@@ -23,7 +23,7 @@
         include(__DIR__ . "/../src/components/header.php");
         include("./../include_db.php");  // Connects the the db
 
-        echo "<button id='go-back'>Replace me with something</button>";
+        echo "<button class='back_btn' id='go-back'><i class='fa-solid fa-angle-left'></i><p>Go back</p></button>";
 
 
         // Getting id from the url

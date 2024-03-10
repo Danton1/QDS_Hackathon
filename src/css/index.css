@@ -3,6 +3,30 @@
   padding: 40px;
 }
 
+.back_btn {
+  padding: 10px 30px;
+  background-color: #263479;
+  opacity: 70%;
+  border-radius: 30px;
+  border: 1px solid gray;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 99;
+}
+
+.back_btn p {
+  margin-left: 20px;
+}
+
+.back_btn:hover {
+  opacity: 100%;
+}
+
 .post {
 	border-radius: 13px;
 	background-color: #ffffff;

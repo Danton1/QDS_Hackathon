@@ -29,7 +29,10 @@
         ?>
 
         <main class ='main_wrap'>
-            <button id='go-back'>Replace me with something</button>
+            <button class="back_btn" id='go-back'>
+                <i class="fa-solid fa-angle-left"></i>
+                <p>Go back</p>
+            </button>
 
             <?php
             $id = $_SESSION['id'];
