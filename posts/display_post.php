@@ -94,7 +94,7 @@
                 echo "<div class='post'>\n";
                 echo '<div class="post_header">';
                 echo '<div class="post_avatar">';
-                echo '<img src="https://source.unsplash.com/random/200x200" alt="user profile">';
+                echo "<img src='https://source.unsplash.com/random/200x200?sig={$row['3']}' alt='user profile'>";
                 echo '</div>';
                 echo '<div class="post_info">';
                 echo '<ul class="post_user">';

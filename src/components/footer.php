@@ -1,6 +1,6 @@
 <?php
 $home_location = '/index.php';
-$post_location = '/posts/create_post.php';
+$post_location = '/index.php#new_post';
 $user_location = '/profile.php';
 ?>
 
