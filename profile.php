@@ -61,20 +61,20 @@
         ?>
 
         <!-- Displays user information -->
-        <table>
-            <tr>
-                <td>Username:</td>
-                <td><?php echo $name ?></a></td>
-            </tr>
-            <tr>
-                <td>Program: </td>
-                <td><?php echo $program ?></td>
-            </tr>
-            <tr>
-                <td>Term: </td>
-                <td><?php echo $term ?></td>
-            </tr>
-        </table>
+        <div>
+            <div>
+                <p>Username:</p>
+                <p><?php echo $name ?></a></p>
+            </div>
+            <div>
+                <p>Program: </p>
+                <p><?php echo $program ?></p>
+            </div>
+            <div>
+                <p>Term: </p>
+                <p><?php echo $term ?></p>
+            </div>
+        </div>
 
         <!-- Displays user posts -->
         <?php 
@@ -96,11 +96,7 @@
     
                 $count++; 
             };
-
-
         ?>
-
-
 
         <?php include("src/components/footer.php"); ?>
     </div>
