@@ -2,7 +2,7 @@
     Class User {
 
         public static function registerUser($db, $username, $email, $password, $program) {
-            $stmt = $db->prepare('INSERT INTO users (Name, Email, Password, Program) VALUES (:username, :email, :password, :program)');
+            $stmt = $db->prepare('INSERT INTO users (Name, Email, Password, ProgramName) VALUES (:username, :email, :password, :program)');
             $stmt->bindValue(':username', $username, SQLITE3_TEXT);
             $stmt->bindValue(':email', $email, SQLITE3_TEXT);
             $stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), SQLITE3_TEXT);
