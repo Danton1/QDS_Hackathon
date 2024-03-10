@@ -33,11 +33,10 @@
             // Sanitizing the post data
             $post = sanitize_input($post);
             $title = sanitize_input($title);
-            echo $program;
-
+            echo $course;
 
             // If one of the fields is empty, redirect to index
-            if (empty($title) || empty($post)) {
+            if (empty($title) || empty($post) || empty($course)) {
                 header('Location: /../index.php');
                 exit;
             }
@@ -55,8 +54,8 @@
             $userid = $row[0];
             $name = $row[1];
 
-            $SQL_insert_data = "INSERT INTO posts (UserName, UserID, title, post, likes, date, program)
-            VALUES ('$name', '$userid', '$title', '$post', 0, date('now'), '$program')";
+            $SQL_insert_data = "INSERT INTO posts (UserName, UserID, title, post, likes, date, program, course)
+            VALUES ('$name', '$userid', '$title', '$post', 0, date('now'), '$program', '$course')";
 
             $db->exec($SQL_insert_data);
             $changes = $db->changes();
