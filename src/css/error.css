@@ -32,6 +32,7 @@
 
 .error_close {
     padding: 10px 30px;
+    width: auto;
     background-color: #3596f1;
     border-radius: 15px;
     color: #fff;
@@ -39,5 +40,6 @@
     display: flex;
     justify-content: center;
     align-items: center;    
+    margin: 0;
     margin-top: 20px;
 }

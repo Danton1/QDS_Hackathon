@@ -29,7 +29,7 @@ require_once('include_db.php');
             <?php
                 if (isset($_SESSION['errors'])) {
                     foreach ($_SESSION['errors'] as $error) {
-                        echo "<div class='error'><i class='fa-solid fa-circle-exclamation'></i><h1>Error !</h1><p>$error</p><div class='error_close'>Ok</div></div>";
+                        echo "<div class='error'><i class='fa-solid fa-circle-exclamation'></i><h1>Error !</h1><p>$error</p><input type='submit' class='error_close' value='Ok'></input></div>";
                     }
                     unset($_SESSION['errors']);
                 } 
