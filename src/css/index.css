@@ -71,6 +71,7 @@
 
 .new-post{
   max-width: 50%;
+  cursor: unset;
 }
 
 .new-post .create{
