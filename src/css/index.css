@@ -156,10 +156,15 @@
   padding: 10px 20px;
   margin: 20px;
   background-color: #263479;
+  opacity: 60%;
   color: #eee;
   border-radius: 30px;
   position: absolute;
   z-index: 10000000;
+}
+
+.program_btn:hover {
+  opacity: 100%;
 }
 
 .program_btn a {
