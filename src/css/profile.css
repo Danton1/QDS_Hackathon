@@ -82,6 +82,23 @@
     cursor: pointer;
 }
 
+.mypost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mypost span {
+    display: flex;
+    align-items: center;
+}
+
+.mypost i {
+    margin-right: 8px;
+    color: #3596f1;
+    font-size: 0.8rem;
+}
+
 @media (max-width:1380px) {
     .profile_wrap {
         width: 80%;
