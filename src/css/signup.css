@@ -1,7 +1,9 @@
 .form-container {
+	max-width: 700px;
+	margin: 0 auto;
 	width: 100%;
 	height: 100%;
-	padding: 30px 0 0 0;
+	padding: 20px 0 0 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -54,6 +56,7 @@ select {
 	align-items: center;
 	background-color: #3596f1;
 	margin-bottom: 10px;
+	cursor: pointer;
 }
 
 .signup_wrap a {

@@ -1,4 +1,5 @@
 .login {
+  max-width: 700px;
   width: 100%;
   height: 100%;
   padding: 30px 0;
@@ -24,7 +25,7 @@
 
 .login_wrap input {
   width: 70%;
-  height: 50px;
+	height: 45px;
   border: 1px solid gray;
   padding: 0 20px;
   display: flex;
@@ -37,6 +38,7 @@
   align-items: center;
   background-color: #3596f1;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .login_wrap a {
