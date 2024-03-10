@@ -22,7 +22,7 @@ $(document).ready(function(){
         });
     });
 
-    $(document).on('change', 'input[name="course"]', function() {
+    $(document).on('change', 'select[name="filter"]', function() {
         $('#course').val(this.value);
     });
 });
@@ -45,7 +45,8 @@ $program = $row['ProgramName'];
     <form action="/../index.php" method="post">
         <input type="hidden" for="id" name="id" id="id" value="<?php echo $id; ?>" />
         <input type="hidden" for="program" name="program" id="program" value="<?php echo $program; ?>" />
-    
+        <input type="hidden" name="course" id="course" value="">
+
         <select name="term" id="filterTerm">
             <option value="" disabled selected>Term</option>
             <option value="1">1</option>
