@@ -1,8 +1,8 @@
 <?php
 
-require_once 'src/models/Program.php'; 
+require_once '../models/Program.php'; 
 
-require_once 'include_db.php'; 
+require_once '../../include_db.php'; 
 
 $programId = isset($_GET['programId']) ? (int) $_GET['programId'] : 0;
 
