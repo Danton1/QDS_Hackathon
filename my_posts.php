@@ -33,7 +33,7 @@
             $id = $_SESSION['id'];
             $res = $db->query('SELECT * FROM posts WHERE UserID = ' . $id);
             while ($row = $res->fetchArray()) {
-                echo "<div class='post'>\n";
+                echo "<div class='post post_desc'>\n";
                     echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
                     echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
                     echo "<p>{$row['4']}</p>";  // Post
@@ -41,8 +41,8 @@
                         echo "<div><i class='fa-regular fa-user'></i>{$row['1']}</div>\n";  // UserID
                         echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
                         echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
-                        echo "<div><a href='posts/delete_post.php?id={$row['0']}'><i class='fa-regular fa-trash'></i>Delete</a></div>\n";  // Delete
-                        echo "<div><i class='fa-regular fa-pen'></i>Edit</div>\n";  // Edit
+                        echo "<div><a href='posts/delete_post.php?id={$row['0']}'><i class='fa-regular fa-trash-can'></i>Delete</a></div>\n";  // Delete
+                        echo "<div><i class='fa-regular fa-pen-to-square'></i>Edit</div>\n";  // Edit
                     echo "</div>\n";
                 echo "</div>\n";
             };

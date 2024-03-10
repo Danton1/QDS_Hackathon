@@ -31,7 +31,6 @@
 
 .post:hover{
   box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
-  cursor: pointer;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.448);
 }
 
@@ -60,7 +59,13 @@
   color: #3595F1;
 }
 
-.stats i:hover {
+.fa-thumbs-up:hover {
+  color: #3595F1;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.fa-comment:hover {
   color: #3595F1;
   font-size: 1.6rem;
   font-weight: bold;
@@ -76,7 +81,9 @@
 
 .new-post{
   max-width: 50%;
-  cursor: unset;
+  max-width: 60%;
+  padding: 20px 50px;
+  cursor: unset !important;
 }
 
 .new-post .create{
@@ -130,7 +137,7 @@
   width: 30%;
   margin-inline: auto;
   padding: 0.5rem;
-  margin: 1rem auto;
+  margin: 2rem auto 1rem auto;
   border-radius: 8px;
   border: 1px solid #3595F1;
   font-size: 1.2rem;
@@ -144,16 +151,20 @@
   color: #fff;
 }
 
-
 .program_btn {
   width: fit-content;
   padding: 10px 20px;
   margin: 20px;
   background-color: #263479;
+  opacity: 60%;
   color: #eee;
   border-radius: 30px;
   position: absolute;
   z-index: 10000000;
+}
+
+.program_btn:hover {
+  opacity: 100%;
 }
 
 .program_btn a {
@@ -228,6 +239,9 @@
 @media (max-width: 796px) {
   .posts {
       padding: 0 0 20px 0;
+  }
+  .post {
+      width: 90%;
   }
   .program_btn{
       position: unset;
