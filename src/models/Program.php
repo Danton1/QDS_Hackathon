@@ -2,7 +2,7 @@
 
 class Program {
     public static function getDetailsById($db, $programId) {
-        $query = $db->prepare("SELECT NumTerms, Coop FROM programs WHERE ProgramID = ?");
+        $query = $db->prepare("SELECT * FROM programs WHERE ProgramID = ?");
         $query->bindValue(1, $programId, SQLITE3_INTEGER);
         
         $result = $query->execute();

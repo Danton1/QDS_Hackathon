@@ -1,12 +1,13 @@
 <?php
     Class User {
 
-        public static function registerUser($db, $username, $email, $password, $program) {
-            $stmt = $db->prepare('INSERT INTO users (Name, Email, Password, ProgramName) VALUES (:username, :email, :password, :program)');
+        public static function registerUser($db, $username, $email, $password, $program, $term) {
+            $stmt = $db->prepare('INSERT INTO users (Name, Email, Password, ProgramName, Term) VALUES (:username, :email, :password, :program, :term)');
             $stmt->bindValue(':username', $username, SQLITE3_TEXT);
             $stmt->bindValue(':email', $email, SQLITE3_TEXT);
             $stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), SQLITE3_TEXT);
             $stmt->bindValue(':program', $program, SQLITE3_TEXT);
+            $stmt->bindValue(':term', $term, SQLITE3_TEXT);
             
             return $stmt->execute() ? true : false;
         }

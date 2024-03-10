@@ -3,12 +3,16 @@ define('BYPASS_AUTH', true);
 require_once '../../config_session.php';
 require_once '../../include_db.php';
 require_once '../../utils.php';
+require_once '../models/Program.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = sanitize_input($_POST['username']);
     $email = sanitize_input($_POST['email']);
     $password = sanitize_input($_POST['password']);
-    $program = $_POST['program'];
+    $term = $_POST['term'];
+
+    $program_details = Program::getDetailsById($db, $_POST['program']);
+    $program = $program_details['ProgramName'];
 
     require_once('../models/User.php');
 
@@ -38,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../../signup.php');
         exit();
     } else {
-        $success = User::registerUser($db, $username, $email, $password, $program);
+        $success = User::registerUser($db, $username, $email, $password, $program, $term);
 
         if (!$success) {
             $_SESSION['errors'] = ['registration_failed' => "Registration failed. Please try again."];

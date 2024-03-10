@@ -39,7 +39,7 @@ require_once('include_db.php');
                 <div class="avatar">
                     <img src="/src/imgs/user.png" alt="profile img">
                 </div>
-                <form class="signup_wrap" action="src/controllers/signup_controller.php" method="post">
+                <form id="signup_form" class="signup_wrap" action="src/controllers/signup_controller.php" method="post">
                     <input type="text" name="username" placeholder="User name">
                     <input type="email" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Password">
@@ -72,34 +72,41 @@ require_once('include_db.php');
 </html>
 
 <script>
-function updateTermsSelect() {
-    const programSelect = document.getElementById('programSelect').value;
-    const termSelect = document.getElementById('termSelect');
+    function updateTermsSelect() {
+        const programSelect = document.getElementById('programSelect').value;
+        const termSelect = document.getElementById('termSelect');
 
-    // Perform AJAX request to fetch program details
-    fetch('src/controllers/get_program_details.php?programId=' + programSelect)
-        .then(response => response.json())
-        .then(data => {
-            const termSelect = document.getElementById('termSelect');
-            termSelect.innerHTML = '<option value="" disabled selected>Term</option>'; // Reset existing options
+        // Perform AJAX request to fetch program details
+        fetch('src/controllers/get_program_details.php?programId=' + programSelect)
+            .then(response => response.json())
+            .then(data => {
+                const termSelect = document.getElementById('termSelect');
+                termSelect.innerHTML = '<option value="" disabled selected>Term</option>'; // Reset existing options
 
-            // Add options based on NumTerms
-            for (let i = 1; i <= data.NumTerms; i++) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
-                termSelect.appendChild(option);
-            }
+                // Add options based on NumTerms
+                for (let i = 1; i <= data.NumTerms; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i;
+                    termSelect.appendChild(option);
+                }
 
-            // Add Co-op option if applicable
-            if (data.Coop) {
-                const coopOption = document.createElement('option');
-                coopOption.value = 'co-op';
-                coopOption.textContent = 'Co-op';
-                termSelect.appendChild(coopOption);
-            }
-        });
-    
-    termSelect.disabled = false;
-}
+                // Add Co-op option if applicable
+                if (data.Coop) {
+                    const coopOption = document.createElement('option');
+                    coopOption.value = 'co-op';
+                    coopOption.textContent = 'Co-op';
+                    termSelect.appendChild(coopOption);
+                }
+            });
+        
+        termSelect.disabled = false;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('signup_form').addEventListener('submit', function(e) {
+            const selectedTerm = document.getElementById('termSelect').value;
+            console.log(selectedTerm);
+        })
+    })
 </script>
