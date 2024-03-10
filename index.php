@@ -23,14 +23,14 @@
         include("config_session.php");
         include("src/components/header.php");
         ?>
-
     <!-- main -->
     <main class='main_wrap'>
         <!-- <div class="home"> -->
-            <div class="program_btn">
-                <a href="./program.php">Go to CST channel
-                <i class="fa-solid fa-angle-right"></i></a>
-            </div>
+        <div class="program_btn">
+            <a href="./program.php">Go to CST channel
+            <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+
         <?php
         include("posts/filter_post_search.php");
         

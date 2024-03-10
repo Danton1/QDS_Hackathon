@@ -34,10 +34,11 @@ $res = $stmt->execute();
 $row = $res->fetchArray();
 $program = $row['ProgramName'];
 ?>
+    
+<input type="checkbox" name="new-post-btn" id="new-post-btn" />
+<label for="new-post-btn"><h1>Create a Post</h1></label>
 
-
-<h1></i>Create a Post</h1>
-<form action="/posts/create_post.php" method="post">
+<form id="new-post-form" action="/posts/create_post.php" method="post">
     <div>
         <label for="title">Title: </label>
         <input for="title" name="title" id="title" />
