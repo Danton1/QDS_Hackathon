@@ -130,6 +130,9 @@
 	height: 20px;
 	display: flex;
 	align-items: center;
+}
+
+.stats div:not(:first-child) {
 	cursor: pointer;
 }
 

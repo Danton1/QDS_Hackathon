@@ -7,7 +7,7 @@
 }
 
 .landing_pic {
-    background: top / cover no-repeat url("../imgs/landingPhoto.jpg") ;
+    background: top / cover no-repeat url("../imgs/landingPic.jpg") ;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -65,4 +65,83 @@
 .text-title {
     font-size: 32px;
     margin-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+    #cap {
+        font-size: 25px;
+    }
+
+    .landTitle {
+        padding: 30px;
+        font-size: 40px;
+    }
+
+    .text-box {
+        width: 350px;
+        padding: 15px; /* padding for the text */
+        margin: 0 50px;
+        font-size: 17px;
+    }
+    
+    .text-title {
+        font-size: 27px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    #cap {
+        width: 270px;
+        font-size: 20px;
+    }
+
+    .landTitle {
+        padding: 25px;
+        font-size: 30px;
+    }
+
+    .text-box {
+        width: 280px;
+        padding: 15px; /* padding for the text */
+        margin: 0 25px;
+        font-size: 17px;
+    }
+    
+    .text-title {
+        font-size: 27px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    #cap {
+        width: 70%;
+        font-size: 17px;
+    }
+
+    .landTitle {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .text-box {
+        width: 70%;
+        padding: 10px; /* padding for the text */
+        margin: 0 20px;
+        font-size: 13px;
+    }
+    
+    .text-title {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .card {
+        height: 300px;
+    }
+
+    .right-card {
+        height: 300px;
+    }
 }
