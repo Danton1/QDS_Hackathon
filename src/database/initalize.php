@@ -182,7 +182,7 @@
         ('BSYS 4905', 'Directed Studies*', 'Business Information Technology Management', 4),
         ('BUSA 4800', 'Management Policy', 'Business Information Technology Management', 4),
         ('FMGT 4530', 'Enterprise Finance', 'Business Information Technology Management', 4),
-        ('OPMT 4170', 'Applied Project Management*', 'Business Information Technology Management', 4);
+        ('OPMT 4170', 'Applied Project Management*', 'Business Information Technology Management', 4)";
         $db->exec($SQL_insert_courses_data);
     }
 
