@@ -59,6 +59,11 @@
 	color: #3595f1;
 }
 
+.stats a {
+	margin-right: 0.5rem;
+	color: rgb(112, 117, 123);
+}
+
 .fa-thumbs-up:hover {
 	color: #3595f1;
 	font-size: 1.6rem;
