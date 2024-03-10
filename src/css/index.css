@@ -1,5 +1,6 @@
 .main_wrap {
-	overflow-y: scroll;
+  overflow-y: scroll;
+  padding: 40px;
 }
 
 .post {
@@ -225,7 +226,7 @@
 
 
 .filter_wrap {
-  margin: 20px auto 0 auto;
+  margin: 0 auto 40px auto;
   max-width: 90%;
   width: 80%;
   /* padding: 0 0.5rem; */
