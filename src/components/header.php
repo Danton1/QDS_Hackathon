@@ -24,9 +24,4 @@ $user_location = '/profile.php';
       <a href="./login.php"><i class="fa-solid fa-user-plus"></i> Login</a>
   </nav>
 </header>
-
-<!-- <header class="header">
-    <h3 class="page_title">General</h3>
-    <i class="fa-solid fa-bars"></i>
-</header> -->
 <!-- End of HTML snippet that is inserted when the navbarplaceholder is called upon -->

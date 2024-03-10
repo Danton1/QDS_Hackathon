@@ -14,7 +14,7 @@
 
 <body>
 
-    <!-- <div class="wrap"> -->
+    <div class="wrap">
         
         <!-- Navbar -->
         <?php $title = 'Student Social Media' ?>
@@ -26,7 +26,7 @@
         ?>
 
     <!-- main -->
-    <main class='container'>
+    <main class='main_wrap'>
         <?php
         include("posts/create_post_form.php");
         include("posts/filter_post_search.php");
@@ -77,7 +77,7 @@
         
         <?php include("src/components/footer.php"); ?>
     
-    <!-- </div> -->
+    </div>
 
     <script src="./src/js/app.js"></script>
 </body>

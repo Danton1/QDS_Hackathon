@@ -1,8 +1,8 @@
 <?php
 define('BYPASS_AUTH', true);
-require_once 'config_session.php';
-require_once 'include_db.php';
-require_once 'utils.php';
+require_once '../../config_session.php';
+require_once '../../include_db.php';
+require_once '../../utils.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = sanitize_input($_POST['username']);
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = sanitize_input($_POST['password']);
     $program = $_POST['program'];
 
-    require_once('src/models/User.php');
+    require_once('../models/User.php');
 
     $errors = [];
 
@@ -35,18 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($errors) {
         $_SESSION['errors'] = $errors;
-        header('Location: /signup.php');
+        header('Location: ../../signup.php');
         exit();
     } else {
         $success = User::registerUser($db, $username, $email, $password, $program);
 
         if (!$success) {
             $_SESSION['errors'] = ['registration_failed' => "Registration failed. Please try again."];
-            header('Location: /signup.php');
+            header('Location: ../../signup.php');
             exit();
         } else {
             $_SESSION['success'] = "Registration successful. Please login.";
-            header('Location: /login.php');
+            header('Location: ../../login.php');
         }
     }
 }

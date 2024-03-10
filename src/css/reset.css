@@ -138,15 +138,14 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
 }
 
 main {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    padding-bottom: 3rem;
 }
 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
     .header {
-        /* padding: 0 2rem; */
+        padding: 0 2rem;
     }
-}
+} */
 
 @media (max-width: 1125px) {
     .hamburger {
@@ -177,7 +176,7 @@ main {
 
     .header .navbar a {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 1rem;
     }
 
@@ -189,9 +188,9 @@ main {
 }
 
 @media (max-width: 796px) {
-    main {
+    /* main {
         margin-top: 8rem;
-    }
+    } */
 
     .main_wrap {
         height: calc(100vh - 60px - 50px);
@@ -223,6 +222,10 @@ main {
 
     .footer a {
         font-size: 2.3rem;
+    }
+
+    .footer i {
+        margin: 0;
     }
 }
 
