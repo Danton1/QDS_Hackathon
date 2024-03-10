@@ -24,15 +24,41 @@
                 <figcaption id="cap">Review, teach, learn, and connect with your fellow peers. Enhnace your school experience.</figcaption>
             </div>
             <div>
-                <p>
-                    what do I write here
-                </p>    
+                <div class="landTitle">
+                    How to Best Use SchoolBoard
+                </div>
+                <div class="card">
+                    <div class="text-box">
+                        <p class="text-title">Clear Your Confusions</p>
+                        <p class="paragraph">There are no bad questions. Ask questions,
+                        get answers, and expand your learning!
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <div class="right-card">
+                    <div class="text-box">
+                        <p class="text-title">Teach To Learn</p>
+                        <p class="paragraph">Respond with your best answer! You may be wrong,
+                        but you will be better. Enhance your understanding.
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="text-box">
+                        <p class="text-title">Practice Makes Perfect</p>
+                        <p class="paragraph">Get access to tons of practice problems posted by
+                        fellow students in your program. Feel the joy of being
+                        better every day.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     
         <?php include("src/components/footer.php") ?>
     </div>
-
     <script src="./src/js/app.js"></script>
 </body>
 </html>
