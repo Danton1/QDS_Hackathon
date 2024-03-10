@@ -18,6 +18,7 @@
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
+        include("./../config_session.php");
         include(__DIR__ . "/../src/components/header.php");
         include("./../include_db.php");  // Connects the the db
 
@@ -91,18 +92,29 @@
                 // echo "<h1>{$row['3']}</h1>\n"; // Title
                 // echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
                 echo "<p><i class='fa-solid fa-chevron-right'></i> {$row['2']}</p>";  // Post
+                echo "</div>\n";
+                echo "</div>\n";
             };
 
-
+            $logged_user_id = $_SESSION['id'];
+            $res = $db->query("SELECT * FROM users WHERE ID = $logged_user_id");
+            $row = $res->fetchArray();
+            $logged_user_name = $row['1'];
         ?>
 
         <?php include(__DIR__ . "/../src/components/footer.php"); ?>
     </div>
     </div>
-    <div class="comment new-post">
-        <label for="post">Add a new comment: </label>
-        <textarea for="post" name="post" id="post"></textarea>
-    </div>
+    <form action="/posts/create_comment.php" method="post">
+        <div class="comment new-post">
+            <label for="post">Add a new comment: </label>
+            <textarea for="post" name="post" id="post"></textarea>
+        </div>
+        <input type="hidden" for="post_id" name="post_id" id="post_id" value="<?php echo $id; ?>">
+        <input type="hidden" for="commenter_id" name="commenter_id" id="commenter_id" value="<?php echo $logged_user_id; ?>">
+        <input type="hidden" for="commenter_name" name="commenter_name" id="commenter_name" value="<?php echo $logged_user_name; ?>">
+        <input type="submit" value="comment " name="comment" />
+    </form>
     <script src="../src/js/app.js"></script>
 </body>
 
