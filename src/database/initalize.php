@@ -151,7 +151,6 @@
         ('COMP 4537', 'Internet Software Architecture', 'Computer Systems Technology', 4),
         ('COMP 4736', 'Introduction to Operating Systems', 'Computer Systems Technology', 4),
         ('LIBS 7102', 'Ethics for Computing Professionals', 'Computer Systems Technology', 4),
-            -- business:
         ('BSYS 1000', 'Business Information Systems', 'Business Information Technology Management', 1),
         ('COMM 1100', 'Business Communication 1', 'Business Information Technology Management', 1),
         ('ECON 2100', 'Microeconomics', 'Business Information Technology Management', 1),
