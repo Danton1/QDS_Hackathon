@@ -155,6 +155,32 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
     background: #3596f1;
 }
 
+#nav_login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#nav_login a {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    /* padding: 2rem 2rem; */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+#nav_login i {
+    margin-right: 0.6rem;
+}
+
+#nav_login a:hover {
+    background: #3596f1;
+}
+
 #menu-btn {
     font-size: 3rem;
     color: #fff;
@@ -177,9 +203,9 @@ main {
         display: inline-block;
     }
 
-    .home aside.side-content {
+    /* .home aside.side-content {
         top: 40%
-    }
+    } */
 
     .header .navbar .mobile-only{
         display: block;
