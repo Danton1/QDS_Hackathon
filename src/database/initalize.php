@@ -94,7 +94,8 @@
     $SQL_create_programs_Table = "CREATE TABLE IF NOT EXISTS programs (
         ProgramID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         ProgramName VARCHAR(100),
-        NumTerms INTEGER
+        NumTerms INTEGER,
+        Coop Boolean DEFAULT 0
     )";
     $db->exec($SQL_create_programs_Table);
 
@@ -103,9 +104,54 @@
     $row = $results->fetchArray();
     if ($row['count'] == 0) {
         $db->exec("
-        INSERT INTO programs (ProgramName, NumTerms) VALUES 
-        ('Business Information Technology Management', 4),
-        ('Computer Systems Technology', 4)
+        INSERT INTO programs (ProgramName, NumTerms, Coop) VALUES 
+        ('Business Information Technology Management', 4, 0),
+        ('Computer Systems Technology', 4, 1)
         ");
+    }
+
+    // Creates courses table if does not exist
+    $SQL_create_courses_Table = "CREATE TABLE IF NOT EXISTS courses (
+        CourseID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        CourseNum VARCHAR(50),
+        CourseName VARCHAR(100),
+        Program VARCHAR(100),
+        Term INTEGER
+    )";
+    $db->exec($SQL_create_courses_Table);
+
+    // Inject sample courses if there are no entries in courses table
+    $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM courses');
+    $res = $stmt->execute();
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+    $count = $row['cnt'];
+
+    if ($count == 0) {
+        $SQL_insert_courses_data = "INSERT INTO courses (CourseNum, CourseName, Program, Term) VALUES
+        ('COMM 1116', 'Business Communications 1', 'Computer Systems Technology', 1),
+        ('COMP 1100', 'CST Program Fundamentals', 'Computer Systems Technology', 1),
+        ('COMP 1113', 'Applied Mathematics', 'Computer Systems Technology', 1),
+        ('COMP 1510', 'Programming Methods', 'Computer Systems Technology', 1),
+        ('COMP 1537', 'Web Development 1', 'Computer Systems Technology', 1),
+        ('COMP 1712', 'Business Analysis and System Design', 'Computer Systems Technology', 1),
+        ('COMP 1800', 'Projects 1', 'Computer Systems Technology', 1),
+        ('COMP 2537', 'Web Development 2', 'Computer Systems Technology', 1),
+        ('COMP 2800', 'Project 2', 'Computer Systems Technology', 1),
+        ('COMM 2216', 'Business Communications 2', 'Computer Systems Technology', 2),
+        ('COMP 2121', 'Discrete Mathematics', 'Computer Systems Technology', 2),
+        ('COMP 2510', 'Procedural Programming', 'Computer Systems Technology', 2),
+        ('COMP 2522', 'Object Oridented Programming 1', 'Computer Systems Technology', 2),
+        ('COMP 2714', 'Relational Database Systems', 'Computer Systems Technology', 2),
+        ('COMP 2721', 'Computer Organization/Architecture', 'Computer Systems Technology', 2),
+        ('COMP 3522', 'Object Oriented Programming 2', 'Computer Systems Technology', 3),
+        ('COMP 3717', 'Mobile Development', 'Computer Systems Technology', 3),
+        ('COMP 3721', 'Data Communications', 'Computer Systems Technology', 3),
+        ('COMP 3760', 'Algorithm Analysis and Design', 'Computer Systems Technology', 3),
+        ('MATH 3042', 'Applied Probability and Statistics', 'Computer Systems Technology', 3),
+        ('COMP 4537', 'Internet Software Architecture', 'Computer Systems Technology', 4),
+        ('COMP 4736', 'Introduction to Operating Systems', 'Computer Systems Technology', 4),
+        ('LIBS 7102', 'Ethics for Computing Professionals', 'Computer Systems Technology', 4)";
+
+        $db->exec($SQL_insert_courses_data);
     }
 ?>
