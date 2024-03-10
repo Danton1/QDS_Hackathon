@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <!-- <div class="wrap"> -->
+    <main>
         <!-- Navbar -->
         <?php $title = 'Viewing Post'; ?>
         <?php
@@ -86,17 +86,17 @@
                 echo '</ul>';
                 echo '</div>';
                 echo '</div>';
-                echo "<div class='post_desc'>\n";
+                echo "<div class='post_desc comment_desc'>";
                 // echo "<h1>{$row['3']}</h1>\n"; // Title
                 // echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
-                echo "<p><i class='fa-solid fa-chevron-right'></i> {$row['2']}</p>";  // Post
+                echo "<p> {$row['2']}</p></div>";  // Post
             };
 
 
         ?>
 
-        <?php include(__DIR__ . "/../src/components/footer.php"); ?>
-    </div>
+    </main>
+    <?php include(__DIR__ . "/../src/components/footer.php"); ?>
 
     <script src="../src/js/app.js"></script>
 </body>
