@@ -1,5 +1,7 @@
 # SchoolBoard - QDS Hackathon 2024
 
+![image](https://github.com/Danton1/QDS_Hackathon/assets/107024401/77b16538-aadf-47f5-9f7c-37d344089c53)
+
 > Hackathon Prompt: Create an app that enhances student health or wellbeing
 
 # Team Members
@@ -10,8 +12,9 @@ These are the incredible people who made this project come to reality in under 4
 - Soomin Jeong
 - Sunwoo Baek
 
-# Project Description
+We are super excited as this is our first Hackathon!
 
+# Project Description
 
 ### Enhanced Wellbeing: Revolutionizing Student Support and Socialization
 **SchoolBoard** is a web application that aims to unite students to share knowledge and socialize, alleviating stress and improving their mental health!
@@ -47,3 +50,12 @@ If you don't just enable the following on php.ini in the folder you installed PH
 - extension=zip
   
 And then use ```php -S localhost:8000``` in the cmd to run the project 
+
+# More about the project
+
+Responsive mobile first design
+![image](https://github.com/Danton1/QDS_Hackathon/assets/107024401/3f9c7531-3ee8-453f-9b20-1dbdcec6758a)
+
+![image](https://github.com/Danton1/QDS_Hackathon/assets/107024401/90bc060b-ddb5-4757-b093-cb747eafd852)
+
+
