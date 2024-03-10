@@ -56,14 +56,14 @@
                         <b></b>
                         <p></p>
                         <div class='stats'>
-                        <div><i class='fa-regular fa-user'></i></div>
+                        <div><i class='fa-regular fa-user'><?php echo "{$row['4']}"?></i></div>
                         <div><i class='fa-regular fa-clock'></i></div>
                         <div><i class='fa-regular fa-thumbs-up'></i></div>
                         <div><i class='fa-regular fa-comment'></i></div>
                     </div>
                 </div>
             </div>
-            <!-- <table>
+            <table>
                 <tr>
                     <td>Username:</td>
                     <td><a href="/../profile.php?id=<?php echo $userid ?>"><?php echo $UserName ?></a></td>
@@ -84,7 +84,7 @@
                     <td>date: </td>
                     <td><?php echo $date ?></td>
                 </tr>
-            </table> -->
+            </table>
         </div>
 
         <?php 
