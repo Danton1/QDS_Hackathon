@@ -11,10 +11,13 @@ $(document).ready(function(){
                 var courses = JSON.parse(response);
                 var filterListing = $('#filterListing');
                 filterListing.empty();
-                filterListing.append('<input type="radio" name="course" id="general" value="General"><label for="course">General</label><br>')
+                var selectFilter = $('<select name="filter"></select>'); // Create select element
+                selectElement.append('<option value="" disabled selected>Filter by</option>');
+                selectFilter.append('<option value="General">General</option>')
                 $.each(courses, function(i, course){
-                    filterListing.append('<input type="radio" name="course" id="course" value="'+course.CourseNum+'"><label for="course'+i+'">'+course.CourseName+'</label><br>');
+                    selectFilter.append('<option value="'+course.CourseNum+'">'+course.CourseName+'</option>');
                 });
+                filterListing.append(selectFilter);
             }
         });
     });
@@ -39,8 +42,8 @@ $program = $row['ProgramName'];
 
 <h1></i>Filter Posts</h1>
 <form action="/../index.php" method="post">
-    <input type="hidden" for="id" name="id" id="id" value="<?php echo $id; ?>">
-    <input type="hidden" for="program" name="program" id="program" value="<?php echo $program; ?>">
+    <input type="hidden" for="id" name="id" id="id" value="<?php echo $id; ?>" />
+    <input type="hidden" for="program" name="program" id="program" value="<?php echo $program; ?>" />
 
     <select name="term" id="filterTerm">
         <option value="" disabled selected>Term</option>
