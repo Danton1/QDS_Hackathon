@@ -30,7 +30,9 @@
     <!-- main -->
     <main class='container'>
         <?php
+        echo "<div class='post new-post' id='new_post'>\n";
         include("posts/create_post_form.php");
+        echo "</div>\n";
         include("posts/filter_post_search.php");
 
         // Prints the table

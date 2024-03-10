@@ -66,3 +66,72 @@
   align-items: center;
   cursor: pointer;
 }
+
+.new-post{
+  max-width: 50%;
+}
+
+.new-post .create{
+  display: flex;
+  align-items: center;
+}
+
+.new-post h1{
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+.new-post label{
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.new-post input{
+  width: 100%;
+  padding: 1rem;
+  margin: 0.2rem 0;
+  border-radius: 8px;
+  border: 1px solid #3595F1;
+  font-size: 1.2rem;
+}
+
+.new-post select{
+  width: 100%;
+  padding: 1rem;
+  margin: 0.2rem 0;
+  border-radius: 8px;
+  border: 1px solid #3595F1;
+  font-size: 1rem;
+}
+
+.new-post textarea{
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  height: 20rem;
+  border-radius: 8px;
+  border: 1px solid #3595F1;
+  font-size: 1rem;
+  resize: none;
+}
+
+.new-post input[type="submit"]{
+  width: 40%;
+  margin-inline: auto;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 8px;
+  border: 1px solid #3595F1;
+  font-size: 1.5rem;
+  background-color: rgb(208, 217, 225);
+  color: #000;
+  cursor: pointer;
+}
+
+.new-post input[type="submit"]:hover{
+  background-color: #3595F1;
+  color: #fff;
+}

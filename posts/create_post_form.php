@@ -7,7 +7,7 @@
 
     <div>
         <label for="post">Post: </label>
-        <input for="post" name="post" id="post" />
+        <textarea for="post" name="post" id="post"></textarea>
     </div>
 
     <!-- or read session program -->
@@ -27,7 +27,7 @@
                                                 ?>"> -->
     <input type="hidden" name="id" value=1>
 
-    <div>
+    <div class='create'>
         <input type="submit" value="create" name="create" />
     </div>
 </form>
