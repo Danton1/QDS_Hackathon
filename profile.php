@@ -21,12 +21,10 @@
         include("config_session.php");  
         include("src/components/header.php");
 
-        echo "<button id='go-back'>Replace me with some back icon</button>";
+        echo "<button class='back_btn' id='go-back'><i class='fa-solid fa-angle-left'></i><p>Go back</p></button>";
     ?>
     <div class="wrap">
         
-        <button id='go-back'>Replace me with something</button>
-
         <?php
         // Getting id from the url
         if (isset($_GET['id'])) {
