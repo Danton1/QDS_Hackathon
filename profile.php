@@ -13,18 +13,12 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <div class="wrap">
         <!-- Navbar -->
         <?php $title = 'Profile' ?>
         <?php include("src/components/header_logged_in.php");
         include("./include_db.php");
         include("config_session.php");  
-=======
-    <!-- Navbar -->
-    <?php
-    $title = 'Profile';
->>>>>>> 251f3f1391c19bca9ca6d59ef080627b1ad465f6
 
     include("./include_db.php");
     include("config_session.php");

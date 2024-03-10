@@ -17,6 +17,10 @@
 	padding: 0 1rem 1rem 1rem;
 }
 
+.post_desc span {
+	color: #747474;
+}
+
 .post h1 {
 	font-size: 2.5rem;
 	margin: 1.2rem 0;
@@ -238,13 +242,31 @@
 	color: #e9a81e;
 }
 
+@media (max-width: 1200px){
+	.post_desc p{
+			font-size: 1.2rem;
+	}
+	.post_desc b{
+		font-size: 1rem;
+	}
+	.post_user{
+		font-size: 1.2rem;
+	}
+	.post{
+		max-width: 90%;
+	}
+}
+
 /* Mobile responsive starts here */
 @media (max-width: 796px) {
 	.posts {
 		padding: 0 0 20px 0;
 	}
+	.post_term {
+		font-size: 1rem;
+	}
 	.post {
-		width: 90%;
+		max-width: 95%;
 	}
 	.program_btn {
 		position: unset;
