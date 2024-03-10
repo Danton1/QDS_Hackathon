@@ -1,3 +1,4 @@
+<?php require_once(__DIR__ . "/../config_session.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,12 +36,22 @@
                 header('Location: /../index.php');
                 exit;
             }
+            $postid = $row[0];
             $UserName = $row[1];
             $userid = $row[2];
             $title = $row[3];
             $post = $row[4];
             $likes = $row[5];
             $date= $row[6];
+
+            $SQL_check_if_liked = $db->prepare("SELECT * FROM likes WHERE user_id = :userid AND post_id = :postid");
+            $SQL_check_if_liked->bindValue(':userid', $_SESSION['id'], SQLITE3_INTEGER);
+            $SQL_check_if_liked->bindValue(':postid', $postid, SQLITE3_INTEGER);
+            $liked_by_user = $SQL_check_if_liked->execute()->fetchArray() ? true : false;
+
+            // Define the class for the like button based on whether the user has liked the post
+            $likeButtonClass = $liked_by_user ? 'like-btn liked' : 'like-btn';
+                
             
             echo "<div class='post'>\n";
             echo '<div class="post_header">';
@@ -60,7 +71,12 @@
             echo "<p>{$row['4']}</p>";  // Post
             echo "<div class='stats'>\n";
             echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
-            echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
+            // echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
+            echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
+                ."<i class='fa-regular fa-thumbs-up'></i>" 
+                ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
+                ."</button>\n";  // Likes button with count
+            
             echo "</div>\n";
             echo "</div>\n";
             echo "</div>\n";
@@ -121,3 +137,31 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var likeButtons = document.querySelectorAll('.like-btn');
+        console.log(likeButtons);
+        likeButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var postId = this.getAttribute('data-postid');
+                var action = this.classList.contains('liked') ? 'unlike' : 'like';
+                var formData = new FormData();
+                formData.append('postId', postId);
+                formData.append('action', action);
+                fetch('../src/controllers/update_likes.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if(data.success) {
+                        document.getElementById('like-count-' + postId).textContent = data.likes;
+                        this.classList.toggle('liked'); // Toggle 'liked' class on the button
+                    }
+                });
+            });
+        });
+    });
+</script>
