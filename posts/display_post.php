@@ -45,29 +45,47 @@
         }
         ?>
 
-        <table>
-            <tr>
-                <td>Username:</td>
-                <td><a href="/../profile.php?id=<?php echo $userid ?>"><?php echo $UserName ?></a></td>
-            </tr>
-            <tr>
-                <td>Title: </td>
-                <td><?php echo $title ?></td>
-            </tr>
-            <tr>
-                <td>Post: </td>
-                <td><?php echo $post ?></td>
-            </tr>
-            <tr>
-                <td>likes: </td>
-                <td><?php echo $likes ?></td>
-            </tr>
-            <tr>
-                <td>date: </td>
-                <td><?php echo $date ?></td>
-            </tr>
-        </table>
-        <br />
+        <div class="main_wrap">
+            <div class="posts">
+                <div class="filter">
+                    Filte by ▽
+                </div>
+                <div class="post_wrap">
+                    <div class='post'>
+                        <h1><i class='fa-solid fa-chevron-right'></i> Title</h1>
+                        <b></b>
+                        <p></p>
+                        <div class='stats'>
+                        <div><i class='fa-regular fa-user'></i></div>
+                        <div><i class='fa-regular fa-clock'></i></div>
+                        <div><i class='fa-regular fa-thumbs-up'></i></div>
+                        <div><i class='fa-regular fa-comment'></i></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <table>
+                <tr>
+                    <td>Username:</td>
+                    <td><a href="/../profile.php?id=<?php echo $userid ?>"><?php echo $UserName ?></a></td>
+                </tr>
+                <tr>
+                    <td>Title: </td>
+                    <td><?php echo $title ?></td>
+                </tr>
+                <tr>
+                    <td>Post: </td>
+                    <td><?php echo $post ?></td>
+                </tr>
+                <tr>
+                    <td>likes: </td>
+                    <td><?php echo $likes ?></td>
+                </tr>
+                <tr>
+                    <td>date: </td>
+                    <td><?php echo $date ?></td>
+                </tr>
+            </table> -->
+        </div>
 
         <?php 
         $res = $db->query("SELECT * FROM comments WHERE PostID = $id");
