@@ -91,7 +91,7 @@
                 echo "<div class='post_desc'>\n";
                 echo "<h1><i class='fa-solid fa-chevron-right'></i>{$row['3']}</h1>\n"; // Title
                 echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
-                echo "<p>{$row['4']}</p>";  // Post
+                echo "<p>" . nl2br(htmlspecialchars($row['4'])) . "</p>";  // Post
                 echo "<span>...Read More</span>\n";
                 echo "</a>\n";
                 echo "<div class='stats'>\n";
