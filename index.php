@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var formData = new FormData();
             formData.append('postId', postId);
             formData.append('action', action);
-            fetch('update_likes.php', {
+            fetch('src/controllers/update_likes.php', {
                 method: 'POST',
                 body: formData
             })
