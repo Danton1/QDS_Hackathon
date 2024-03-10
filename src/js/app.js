@@ -16,10 +16,22 @@ function check() {
 }
 
 // Call the check function when the checkbox is clicked
-menu.addEventListener('click', check);
+if(menu){
+    menu.addEventListener('click', check);
+}
 
 // Deactivate navbar if the user scrolls
 window.onscroll = () =>{
     menu.checked = false;
     navbar.classList.remove('active');
 };
+
+
+let errorClose = document.querySelector('.error_close');
+let error = document.querySelector('.error');
+
+if(error){
+    errorClose.addEventListener('click', () => {
+        document.querySelector('.error').style.display = 'none';
+    });
+}

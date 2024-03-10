@@ -32,7 +32,7 @@
             <div class="login">
                 <?php
                     if (isset($_SESSION['errors'])) {
-                        echo "<div class='error'><i class='fa-solid fa-circle-exclamation'></i><h1>Error !</h1><p>{$_SESSION['errors']}</p><div class='error_close'>Ok</div></div>";
+                        echo "<div class='error'><i class='fa-solid fa-circle-exclamation'></i><h1>Error !</h1><p>{$_SESSION['errors']}</p><div class='error_close' id='errorClose'>Ok</div></div>";
                         unset($_SESSION['errors']);
                     }
                 ?>
