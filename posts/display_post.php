@@ -70,10 +70,11 @@
             echo "<p>" . nl2br(htmlspecialchars($row['4'])) . "</p>";  // Post
             echo "<div class='stats'>\n";
             echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
+            
             echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
-                ."<i class='fa-regular fa-thumbs-up'></i>" 
-                ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
-                ."</button>\n";  // Likes button with count
+                    ."<i class='fa-regular fa-thumbs-up'></i>"
+                    ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
+                    ."</button>\n";  // Likes button with count
             
             echo "</div>\n";
             echo "</div>\n";
