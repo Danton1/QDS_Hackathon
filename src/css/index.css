@@ -238,18 +238,6 @@
 	color: #e9a81e;
 }
 
-.comment_desc {
-  padding: 1rem 1rem  0 1rem;
-  /* padding: 0 10px; */
-  display: flex;
-  align-items: center;
-}
-
-.comment_desc p {
-  margin: 0;
-  padding: 0;
-}
-
 /* Mobile responsive starts here */
 @media (max-width: 796px) {
 	.posts {

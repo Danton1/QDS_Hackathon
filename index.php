@@ -13,12 +13,11 @@
 </head>
 
 <body>
-
     <!-- <div class="wrap"> -->
         
         <!-- Navbar -->
-        <?php $title = 'Student Social Media' ?>
-        <?php
+        <?php 
+        $title = 'Student Social Media'; 
         include("./include_db.php");  // Connects the the db
         include("src/database/initalize.php");  // Initalizes the db
         include("config_session.php");
@@ -39,13 +38,14 @@
         include("posts/create_post_form.php");
         echo "</div>\n";
 
+        $mystring = '';
         $currentUserId = $_SESSION['id'];
 
         // Prints the table
-        if (isset($_POST['filter'])) {
+        if (isset($_POST['filter'])) { // If Filtered
             extract($_POST);
             $res = $db->query("SELECT * FROM posts WHERE course = '{$course}'");
-        } else {
+        } else { // If not filtered
             $res = $db->query('SELECT * FROM posts');
         }
         $count = 1;
@@ -79,7 +79,7 @@
                 echo "<div class='post'>\n";
                 echo '<div class="post_header">';
                 echo '<div class="post_avatar">';
-                echo '<img src="https://cdn3.emoji.gg/emojis/9069-sadcat-thumbsup.png" alt="user profile">';
+                echo "<img src='https://source.unsplash.com/random/200x200?sig={$row['2']}' alt='user profile'>";
                 echo '</div>';
                 echo '<div class="post_info">';
                 echo '<ul class="post_user">';
