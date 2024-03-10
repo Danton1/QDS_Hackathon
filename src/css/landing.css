@@ -7,7 +7,7 @@
 }
 
 .landing_pic {
-    background: top / cover no-repeat url("../imgs/landingPic.jpg");
+    background: url("../imgs/landingPic.jpg") no-repeat top / cover;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -19,15 +19,20 @@
     text-align: center;
     font-size: 30px;
     color: azure;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
     /* background-color: rgb(201, 201, 201, 0.3); */
 }
 
 .landTitle {
-    padding: 40px;
-    font-size: 50px;
+    padding: 30px;
+    font-size: 2.5rem;
     text-align: center;
 }
+.landTitle {
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff20;
+  }
 
 /* Style for the card container */
 .card {
@@ -60,16 +65,23 @@
     font-size: 20px;
     text-align: center;
     color: #ffffff; /* text color */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
 }
 
 .text-title {
     font-size: 32px;
     margin-bottom: 40px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+}
+
+.paragraph {
+    
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
 }
 
 @media (max-width: 800px) {
     #cap {
-        font-size: 25px;
+        font-size: 2rem;
     }
 
     .landTitle {
@@ -92,8 +104,8 @@
 
 @media (max-width: 600px) {
     #cap {
-        width: 270px;
-        font-size: 20px;
+        width: 88%;
+        font-size: 1.8rem;
     }
 
     .landTitle {
@@ -117,7 +129,7 @@
 @media (max-width: 400px) {
     #cap {
         width: 70%;
-        font-size: 17px;
+        font-size: 2rem;
     }
 
     .landTitle {

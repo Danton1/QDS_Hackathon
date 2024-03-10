@@ -21,11 +21,11 @@
         <!-- Main -->
         <div class="main_wrap">
             <div class = "landing_pic">
-                <figcaption id="cap">Review, teach, learn, and connect with your fellow peers. Enhnace your school experience.</figcaption>
+                <figcaption id="cap">Review, teach, learn, and connect with your fellow peers. Enhance your school experience.</figcaption>
             </div>
             <div>
                 <div class="landTitle">
-                    Maximize The Use Of SchoolBoard
+                    SchoolBoard is the platform where students can connect, share, and learn from each other.
                 </div>
                 <div class="card">
                     <div class="text-box">
