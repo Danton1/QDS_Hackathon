@@ -21,6 +21,9 @@
         <?php
         include("./../include_db.php");
         include("validate_functions.php");
+        include("../config_session.php");
+
+        check_user_authentication();
 
         if (isset($_POST['create'])) {
             
@@ -30,6 +33,8 @@
             // Sanitizing the post data
             $post = sanitize_input($post);
             $title = sanitize_input($title);
+            echo $program;
+
 
             // If one of the fields is empty, redirect to index
             if (empty($title) || empty($post)) {
@@ -50,12 +55,14 @@
             $userid = $row[0];
             $name = $row[1];
 
-            $SQL_insert_data = "INSERT INTO posts (UserName, UserID, title, post, likes, date)
-            VALUES ('$name', '$userid', '$title', '$post', 0, date('now'))";
+            $SQL_insert_data = "INSERT INTO posts (UserName, UserID, title, post, likes, date, program)
+            VALUES ('$name', '$userid', '$title', '$post', 0, date('now'), '$program')";
 
             $db->exec($SQL_insert_data);
             $changes = $db->changes();
 
+
+            echo $program;
             header('Location: ../../index.php');
             exit;
         }

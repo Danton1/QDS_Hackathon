@@ -1,4 +1,4 @@
-<?php require_once('config_session.php') ?>
+<!-- <?php #require_once('config_session.php') ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +19,27 @@
         <?php $title = 'Profile' ?>
         <?php include("src/components/header.php");
         include("./include_db.php");
+        include("config_session.php");  
 
         // Getting id from the url
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
+
+            $stm = $db->prepare('SELECT * FROM users WHERE ID = :id');
+            $stm->bindValue(':id', "$id", SQLITE3_TEXT);
+            $res = $stm->execute();
+
+            $row = $res->fetchArray(SQLITE3_NUM);
+            if ($row === false) {
+                header('Location: /../index.php');
+                exit;
+            }
+            $userid = $row[0];
+            $name = $row[1];
+            $program = $row[2];
+            $term = $row[3];
+        } else if(isset($_SESSION['id'])) {
+            $id = $_SESSION['id'];
 
             $stm = $db->prepare('SELECT * FROM users WHERE ID = :id');
             $stm->bindValue(':id', "$id", SQLITE3_TEXT);
