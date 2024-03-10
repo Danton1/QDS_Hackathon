@@ -102,6 +102,10 @@ body { font-family: Arial, sans-serif; background-color: #e8e8e8; }
     padding: 0 5%;
 }
 
+.header .navbar .mobile-only{
+    display: none;
+}
+
 .logo-img {
     height: 80%;
     width: 6rem;
@@ -171,6 +175,10 @@ main {
 
     .home aside.side-content {
         top: 40%
+    }
+
+    .header .navbar .mobile-only{
+        display: block;
     }
 
     .header .navbar {
