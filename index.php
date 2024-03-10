@@ -13,43 +13,37 @@
 </head>
 
 <body>
-    <!-- <div class="wrap"> -->
-        
-        <!-- Navbar -->
-        <?php 
+    <!-- Navbar -->
+    <?php 
         $title = 'Student Social Media'; 
         include("./include_db.php");  // Connects the the db
         include("src/database/initalize.php");  // Initalizes the db
         include("config_session.php");
         include("src/components/header.php");
-        ?>
+    ?>
+
     <!-- main -->
     <main class='main_wrap'>
-        <!-- <div class="home"> -->
-        <!-- <div class="program_btn">
-            <a href="./program.php">Go to CST channel
-            <i class="fa-solid fa-angle-right"></i></a>
-        </div> -->
 
         <?php
-        include("posts/filter_post_search.php");
-        
-        echo "<div class='post new-post' id='new_post'>\n";
-        include("posts/create_post_form.php");
-        echo "</div>\n";
+            include("posts/filter_post_search.php");
+            
+            echo "<div class='post new-post' id='new_post'>\n";
+            include("posts/create_post_form.php");
+            echo "</div>\n";
 
-        $mystring = '';
-        $currentUserId = $_SESSION['id'];
+            $mystring = '';
+            $currentUserId = $_SESSION['id'];
 
-        // Prints the table
-        if (isset($_POST['filter'])) { // If Filtered
-            extract($_POST);
-            $res = $db->query("SELECT * FROM posts WHERE course = '{$course}'");
-        } else { // If not filtered
-            $res = $db->query('SELECT * FROM posts');
-        }
-        $count = 1;
-        while ($row = $res->fetchArray()) {
+            // Prints the table
+            if (isset($_POST['filter'])) { // If Filtered
+                extract($_POST);
+                $res = $db->query("SELECT * FROM posts WHERE course = '{$course}'");
+            } else { // If not filtered
+                $res = $db->query('SELECT * FROM posts');
+            }
+            $count = 1;
+            while ($row = $res->fetchArray()) {
                 // Getting the number of comments
                 $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM comments WHERE postID = :id');
                 $stmt->bindValue(':id', $row['0'], SQLITE3_INTEGER);
@@ -96,8 +90,12 @@
                 echo "</a>\n";
                 echo "<div class='stats'>\n";
                 echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
-                // echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
-                echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'><i class='fa-regular fa-thumbs-up'></i> <span id='like-count-{$row['0']}'>{$row['5']}</span></button>\n";  // Likes button with count
+
+                echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
+                    ."<i class='fa-regular fa-thumbs-up'></i>"
+                    ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
+                    ."</button>\n";  // Likes button with count
+
                 echo "<div><i class='fa-regular fa-comment'></i>{$comments}</div>\n";  // comments
                 echo "</div>\n";
                 echo "</div>\n";
@@ -105,16 +103,11 @@
                 echo "</div>\n";
 
                 $count++;
-                // echo "</div>\n";
             };
             ?>
-        <!-- </div> -->
     </main>
-        <!-- </div> -->
         
         <?php include("src/components/footer.php"); ?>
-    
-    <!-- </div> -->
 
     <script src="./src/js/app.js"></script>
 </body>
