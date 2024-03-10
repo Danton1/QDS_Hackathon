@@ -33,24 +33,36 @@
                 <i class="fa-solid fa-angle-right"></i></a>
             </div>
         <?php
+        include("posts/filter_post_search.php");
+        
         echo "<div class='post new-post' id='new_post'>\n";
         include("posts/create_post_form.php");
         echo "</div>\n";
-        include("posts/filter_post_search.php");
-
 
         $mystring = '';
         // Prints the table
-        $res = $db->query('SELECT * FROM posts');
+        if (isset($_POST['filter'])) {
+            extract($_POST);
+            $res = $db->query("SELECT * FROM posts WHERE course = '{$course}'");
+        } else {
+            $res = $db->query('SELECT * FROM posts');
+        }
         $count = 1;
         while ($row = $res->fetchArray()) {
-
                 // Getting the number of comments
                 $stmt = $db->prepare('SELECT COUNT(*) as cnt FROM comments WHERE postID = :id');
                 $stmt->bindValue(':id', $row['0'], SQLITE3_INTEGER);
                 $res2 = $stmt->execute();
                 $row2 = $res2->fetchArray(SQLITE3_ASSOC);
                 $comments = $row2['cnt'];
+
+                $stmt = $db->prepare('SELECT Term, ProgramName FROM users WHERE ID = :id');
+                $stmt->bindValue(':id', $row['2'], SQLITE3_INTEGER);
+                $res3 = $stmt->execute();
+                $row3 = $res3->fetchArray(SQLITE3_ASSOC);
+                $term = $row3['Term'];
+                $user_program = $row3['ProgramName'];
+
 
                 echo "<a href='/posts/display_post.php?id={$row['0']}'>\n";
                 echo "<div class='post'>\n";
@@ -60,8 +72,8 @@
                 echo '</div>';
                 echo '<div class="post_info">';
                 echo '<ul class="post_user">';
-                echo "<li>{$row['1']}</li>";  // UserID
-                echo '<li class="post_term">Term 1 | CST</li>';
+                echo "<li>{$row['1']}</li>";  // Name
+                echo "<li class='post_term'>Term {$term} | {$user_program}</li>";
                 echo '</ul>';
                 echo '</div>';
                 echo '</div>';
