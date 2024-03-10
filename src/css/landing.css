@@ -7,7 +7,7 @@
 }
 
 .landing_pic {
-    background: top / cover no-repeat url("../imgs/landingPhoto.jpg") ;
+    background: top / cover no-repeat url("../imgs/landingPic.jpg") ;
     height: 100%;
     display: flex;
     justify-content: center;

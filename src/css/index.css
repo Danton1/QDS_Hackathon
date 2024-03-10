@@ -85,6 +85,9 @@
 	height: 20px;
 	display: flex;
 	align-items: center;
+}
+
+.stats div:not(:first-child) {
 	cursor: pointer;
 }
 
@@ -174,6 +177,8 @@
 /* new post css ends here */
 
 /* Filter css starts here */
+
+
 .filter_wrap {
   margin: 20px auto 0 auto;
   max-width: 90%;
@@ -195,6 +200,7 @@
   border-radius: 13px;
   background-color: #fff;
   border: 1px solid gray;
+	font-size: 1.2rem;
 }
 
 .filter_wrap input {
@@ -224,12 +230,37 @@
   width: 100%;
 }
 
-.filter_wrap a {
-  padding: 10px 30px;
-  border-radius: 13px;
-  background-color: #263479;
-  border: 1px solid gray;
+.filter input[type="submit"], .filter_wrap a{
+	border: 1px solid #3595f1;
+	font-size: 1.2rem;
+	background-color: rgb(162, 212, 255);
+	color: #000;
+	cursor: pointer;
 }
+
+.filter_wrap a {
+	padding: 10px 30px;
+	border-radius: 13px;
+	background-color: #3596f1d3;
+	border: 1px solid #0084ff;
+}
+
+.filter_wrap a button{
+	font-size: 1.2rem;
+	color: #000;
+}
+
+.filter input[type="submit"]:hover, .filter_wrap a:hover{
+	background-color: #0084ff;
+	color: #fff;
+	border: 1px solid #000;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter_wrap a:hover button{
+	color: #fff;
+}
+
 /* Filter css ends here */
 
 /* Post style starts here */
