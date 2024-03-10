@@ -94,7 +94,8 @@
     $SQL_create_programs_Table = "CREATE TABLE IF NOT EXISTS programs (
         ProgramID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         ProgramName VARCHAR(100),
-        NumTerms INTEGER
+        NumTerms INTEGER,
+        Coop Boolean DEFAULT 0
     )";
     $db->exec($SQL_create_programs_Table);
 
@@ -103,9 +104,9 @@
     $row = $results->fetchArray();
     if ($row['count'] == 0) {
         $db->exec("
-        INSERT INTO programs (ProgramName, NumTerms) VALUES 
-        ('Business Information Technology Management', 4),
-        ('Computer Systems Technology', 4)
+        INSERT INTO programs (ProgramName, NumTerms, Coop) VALUES 
+        ('Business Information Technology Management', 4, 0),
+        ('Computer Systems Technology', 4, 1)
         ");
     }
 

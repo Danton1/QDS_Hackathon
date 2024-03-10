@@ -19,9 +19,9 @@
         <!-- Navbar -->
         <?php $title = 'Student Social Media' ?>
         <?php
-        include("config_session.php");
         include("./include_db.php");  // Connects the the db
         include("src/database/initalize.php");  // Initalizes the db
+        include("config_session.php");
         include("src/components/header.php");
         ?>
 
