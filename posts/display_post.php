@@ -70,7 +70,6 @@
             echo "<p>" . nl2br(htmlspecialchars($row['4'])) . "</p>";  // Post
             echo "<div class='stats'>\n";
             echo "<div><i class='fa-regular fa-clock'></i>{$row['6']}</div>\n";  // Date
-            // echo "<div><i class='fa-regular fa-thumbs-up'></i>{$row['5']}</div>\n";  // Likes
             echo "<button class='{$likeButtonClass}' data-postid='{$row['0']}'>"
                 ."<i class='fa-regular fa-thumbs-up'></i>" 
                 ."<span id='like-count-{$row['0']}'>{$row['5']}</span>"
@@ -99,13 +98,10 @@
                 echo '<div class="post_info">';
                 echo '<ul class="post_user">';
                 echo "<li>{$row['4']}</li>";  // UserID
-                // echo "<li class='post_term'>{$row['7']} | {$row['8']}</li>";
                 echo '</ul>';
                 echo '</div>';
                 echo '</div>';
                 echo "<div class='post_desc comment_desc'>";
-                // echo "<h1>{$row['3']}</h1>\n"; // Title
-                // echo "<b>{$row['7']} | {$row['8']}</b>";  // Program | course
                 echo "<p><i class='fa-solid fa-chevron-right'></i> {$row['2']}</p>";  // Post
                 echo "</div>\n";
                 echo "</div>\n";

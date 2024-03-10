@@ -27,6 +27,7 @@ if (!isset($_SESSION['last_regeneration_time'])) {
     }
 }
 
+// To avoid session fixation attacks, we regenerate the session ID every 30 minutes
 function regenerate_session_id() {
     session_regenerate_id();
     $_SESSION['last_regeneration_time'] = time();
@@ -35,7 +36,7 @@ function regenerate_session_id() {
 function check_user_authentication() {
     // If the user is not logged in, redirect to the login page
     if (!isset($_SESSION['id'])) {
-        header('Location: /login.php');
+        header('Location: /landing.php');
         exit;
     }
 }
