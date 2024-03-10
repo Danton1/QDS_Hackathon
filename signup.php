@@ -43,7 +43,7 @@ require_once('include_db.php');
                     <input type="email" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Password">
                     <div class="select_wrap">
-                        <select name="program">
+                        <select name="program" id="programSelect" onchange="updateTermsSelect()">
                             <option value="" disabled selected>Program</option>
                             <?php
                                 $results = $db->query("SELECT * FROM programs");
@@ -52,14 +52,9 @@ require_once('include_db.php');
                                 }
                             ?>
                         </select>
-                        <select name="program">
+
+                        <select name="term" id="termSelect" disabled>
                             <option value="" disabled selected>Term</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="co-op">Co-op</option>
                         </select>
                     </div>
                     <input id="confirm" type="submit" value="Create account">
@@ -74,3 +69,36 @@ require_once('include_db.php');
     <script src="./src/js/app.js"></script>
 </body>
 </html>
+
+<script>
+function updateTermsSelect() {
+    const programSelect = document.getElementById('programSelect').value;
+    const termSelect = document.getElementById('termSelect');
+
+    // Perform AJAX request to fetch program details
+    fetch('get_program_details.php?programId=' + programSelect)
+        .then(response => response.json())
+        .then(data => {
+            const termSelect = document.getElementById('termSelect');
+            termSelect.innerHTML = '<option value="" disabled selected>Term</option>'; // Reset existing options
+
+            // Add options based on NumTerms
+            for (let i = 1; i <= data.NumTerms; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                termSelect.appendChild(option);
+            }
+
+            // Add Co-op option if applicable
+            if (data.Coop) {
+                const coopOption = document.createElement('option');
+                coopOption.value = 'co-op';
+                coopOption.textContent = 'Co-op';
+                termSelect.appendChild(coopOption);
+            }
+        });
+    
+    termSelect.disabled = false;
+}
+</script>
